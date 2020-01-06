@@ -35,7 +35,7 @@ select, input, button {font:11.5px 'Spoqa Han Sans','맑은 고딕','Malgun Goth
 .footer .f_content{position: relative; top: 45px; max-width:1080px; margin:0 auto}
 .footer .f_content h2{float:left; margin-right:25px}
 .footer .f_content p{display:inline-block; float:left; margin-bottom:10px; height:75px}
-.footer .f_content p span:first-child{display:block; margin-bottom:10px}
+.footer .f_content p span:last-child{display:inline-block; margin-top:10px}
 .footer .f_content p:nth-child(3){color:#777}
 .footer .f_content p.f_tel{position:relative; top:-25px; right:-15px; float:left; width:260px; padding:20px 15px; height:40px; border:3px solid #ddd}
 .footer .f_content p.f_tel img{width:40px; height:40px; float:left; margin-right:7px}
