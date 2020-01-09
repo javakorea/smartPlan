@@ -2,17 +2,31 @@
 
 
 /**미디어쿼리**/
+@media (max-width: 510px){
+	.container .item_text{font-size: 1.4rem !important;}
+	.container .item > p{font-size:30px}
+	.footer .f_content p > span:first-child{display:block;}
+	.footer .f_content div.f_tel > div {width:175px !important;; top:10px !important;}
+	.footer .f_content div.f_tel > div > a:first-child:after{display:none !important;}
+	
+}
 
- @media(max-width: 991px){	/*pad*/
-	.item{height:1000px;}
-	.container .item > p {width:85%; padding: 15% 0; border-width: 10px; font-size:50px}
-	.container .main_box td{font-size:22px}
-	.container .main_box td p:before{margin:0 auto}
-	.container .mocaGrid img{width:90%}
-	.footer .f_content div.f_tel {width:500px; margin-top:15px; right:0}
-	.footer .f_content div.f_tel .title{margin-top:0; font-size:25px}
-	.footer .f_content div.f_tel > div {width: calc(100% - 195px); top:25px; font-size:20px}
-	.footer .f_content div.f_tel > div > a:first-child:after{content:'|'; margin:0 10px}
+ @media (max-width: 991px){	/*pad*/
+ 	.header {top: 13px; height:60px; background-size: 70%; background-position: center center}
+ 	.header h1 a{top: 6px; background-size: 70%; background-position: center;}
+	.container .item {height:300px}
+	.container .item > p {width:85%; padding: 7% 0; top:13%; border-width: 5px;}
+	.container .item_text{font-size:1.7rem; margin-bottom:35px}
+	.container .main_box{margin-bottom:35px}
+	.container .main_box td{padding:20px 2%; font-size:16px}
+	.container .main_box td p:before{margin:0 auto; width:100%}
+	.container .mocaGrid img{width:80%}
+	
+	.footer{padding-bottom:90px}
+	.footer .f_content div.f_tel {width:91%; max-width:430px; margin-top:15px; top:20px; right:0}
+	.footer .f_content div.f_tel .title{}
+	.footer .f_content div.f_tel > div {width:300px; top:24px; left:150px; font-size:19px}
+ 	.footer .f_content div.f_tel > div > a:first-child:after{content:'|'; margin:0 10px}
 	
 }
 
@@ -20,7 +34,7 @@
 	.container .main_box.web{display:none}
 	.footer .f_content{padding:0 5%}
 	.footer .f_content h2{float:none}
-	.subpage table.grid .subject, .subpage table.grid td ul li{font-size:19px;}
+	.subpage table.grid .subject, .subpage table.grid td ul li{}
 	.subpage table.grid > colgroup > col:nth-child(1), .subpage table.grid > colgroup > col:nth-child(3){width:5% !important;}
 	.subpage table.grid > colgroup > col:nth-child(2){width:90% !important;}
 } 

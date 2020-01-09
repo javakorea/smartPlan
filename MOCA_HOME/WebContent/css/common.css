@@ -10,21 +10,21 @@ select, input, button {font:11.5px 'Spoqa Han Sans','맑은 고딕','Malgun Goth
 .header {height:93px}
 .header h1 a{position:relative; display:block; top:25px; background:url(../images/MOCA_CI.png)no-repeat; margin:0 auto; width:150px; height:50px; text-indent:-9999px}
 .item {width: 100%; height: 470px; background:url(../images/item.jpg) no-repeat; background-size: cover; background-position: center center;}
-.container .item > p {position: relative; top: 30%; width: 700px; margin: 0 auto; padding: 30px 0; text-align: center; font-size: 40px; color: #fff; border: 5px solid rgba(255, 255, 255, 0.5); line-height: 52px}
+.container .item > p {position: relative; top: 30%; width: 700px; margin: 0 auto; padding: 30px 0; text-align: center; font-size: 35px; color: #fff; border: 5px solid rgba(255, 255, 255, 0.5); line-height: 52px}
 .container .item_text{height:90px; margin-bottom:85px; background:#e8e8ea; text-align:center; font-size:33px; line-height:90px}
 .container .main_box {max-width:1080px; height:500px; margin:0 auto; margin-bottom:150px}
 .container .main_box td{padding:20px 30px; font-size:17px; font-weight:700; text-align:center; line-height:1.3; letter-spacing:-1px}
 .container .main_box td.bg {background:#e5ecf0}
-.container .main_box td p{height: 204px}
+.container .main_box td p{height: 204px; word-break:break-word;}
 .container .main_box td p:before{content:''; display:block; position:relative; width:155px; height:120px; margin:0 auto 25px; background:url(../images/main_box.png)no-repeat 0 0}
-.container .main_box tr:first-child td:nth-child(1) p:before{background-position:0 0;}
-.container .main_box tr:first-child td:nth-child(2) p:before{background-position:0 -120px}
-.container .main_box tr:first-child td:nth-child(3) p:before{background-position:0 -240px}
-.container .main_box tr:first-child td:nth-child(4) p:before{background-position:0 -360px}
-.container .main_box tr:last-child td:nth-child(1) p:before{background-position:0 -480px}
-.container .main_box tr:last-child td:nth-child(2) p:before{background-position:0 -600px}
-.container .main_box tr:last-child td:nth-child(3) p:before{background-position:0 -720px}
-.container .main_box tr:last-child td:nth-child(4) p:before{background-position:0 -840px}
+.container .main_box tr td p.img1:before{background-position:center 0;}
+.container .main_box tr td p.img2:before{background-position:center -120px}
+.container .main_box tr td p.img3:before{background-position:center -240px}
+.container .main_box tr td p.img4:before{background-position:center -360px}
+.container .main_box tr td p.img5:before{background-position:center -480px}
+.container .main_box tr td p.img6:before{background-position:center -600px}
+.container .main_box tr td p.img7:before{background-position:center -720px}
+.container .main_box tr td p.img8:before{background-position:center -840px}
 .container .mocaGrid{/*height:800px;*/ background:#d2dee4; text-align:center;}
 .container .mocaGrid h3{font-size:30px}
 .container .mocaGrid h3:before{content:''; display:block; width:55px; height:5px; background:#3175c8; border-radius:5px; margin:55px auto}
@@ -34,9 +34,10 @@ select, input, button {font:11.5px 'Spoqa Han Sans','맑은 고딕','Malgun Goth
 .footer{position:absolute; left:0; right:0; padding-bottom:34px; background:#434343; font-size:17px; color:#bbb}
 .footer .f_content{position: relative; top: 45px; max-width:1080px; margin:0 auto}
 .footer .f_content h2{float:left; margin-right:25px}
-.footer .f_content p{display:inline-block; float:left; height:75px}
+.footer .f_content p{display:inline-block; float:left}
 /* .footer .f_content p span:last-child{display:inline-block; margin-top:10px}
 .footer .f_content p:nth-child(3){color:#777} */
+.footer .f_content p > span:first-child{margin-right:10px}
 .footer .f_content div.f_tel{position:relative; top:-25px; right:-15px; float:left; width:260px; padding:20px 15px; height:40px; border:3px solid #ddd}
 .footer .f_content div.f_tel img{width:40px; height:40px; float:left; margin-right:7px}
 .footer .f_content div.f_tel span{float:left; margin:0 5px}
