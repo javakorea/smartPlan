@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+/**미디어쿼리**/
+
+ @media(max-width: 991px){	/*pad*/
+	.item{height:1000px;}
+	.container .item > p {width:85%; padding: 15% 0; border-width: 10px; font-size:50px}
+	.container .main_box td{font-size:22px}
+	.container .main_box td p:before{margin:0 auto}
+	.container .mocaGrid img{width:90%}
+	.footer .f_content div.f_tel {width:500px; margin-top:15px; right:0}
+	.footer .f_content div.f_tel .title{margin-top:0; font-size:25px}
+	.footer .f_content div.f_tel > div {width: calc(100% - 195px); top:25px; font-size:20px}
+	.footer .f_content div.f_tel > div > a:first-child:after{content:'|'; margin:0 10px}
+	
+}
+
+@media (max-width: 1199px){	/*pad pro*/
+	.container .main_box.web{display:none}
+	.footer .f_content{padding:0 5%}
+	.footer .f_content h2{float:none}
+	.subpage table.grid .subject, .subpage table.grid td ul li{font-size:19px;}
+	.subpage table.grid > colgroup > col:nth-child(1), .subpage table.grid > colgroup > col:nth-child(3){width:5% !important;}
+	.subpage table.grid > colgroup > col:nth-child(2){width:90% !important;}
+} 
+
+@media (min-width: 1200px){ /*pc*/
+	.container .main_box.mobile{display:none}
+}
