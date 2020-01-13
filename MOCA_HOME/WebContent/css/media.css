@@ -16,12 +16,14 @@
  	.header h1 a{top: 6px; background-size: 70%; background-position: center;}
 	.container .item {height:300px}
 	.container .item > p {width:85%; padding: 7% 0; top:13%; border-width: 5px;}
-	.container .item_text{font-size:1.7rem; margin-bottom:35px}
-	.container .main_box{margin-bottom:35px}
+	.container .item_text{font-size:1.7rem; margin:0}
+	.container .item_text:before, .container .item_text:after{background-size:35px; width:35px; height:35px}
+	.container .main_box{margin-bottom:0}
 	.container .main_box td{padding:20px 2%; font-size:16px}
 	.container .main_box td p:before{margin:0 auto; width:100%}
-	.container .mocaGrid img{width:80%}
-	
+	.container .mocaGrid img, .container .mocaGridSub img{width:80%}
+	.container .mocaGrid .left, .container .mocaGrid .right{float:none; width:100%; text-align:center}
+	.container .mocaGrid .left a.btn_more{display:none;}
 	.footer{padding-bottom:90px}
 	.footer .f_content div.f_tel {width:91%; max-width:430px; margin-top:15px; top:20px; right:0}
 	.footer .f_content div.f_tel .title{}
