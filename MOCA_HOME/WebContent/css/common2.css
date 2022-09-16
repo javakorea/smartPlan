@@ -1,0 +1,1043 @@
+/* 기본 초기화 */
+*{ margin: 0; padding: 0; border: 0; text-align: center;}
+a{ text-decoration: none; color: black; margin: 0; padding: 0;}
+ul, li{ list-style: none; text-align:left }
+table{ padding: 0; border: 0; border-spacing: 0px; border-collapse: collapse; }
+th, tr, td{ padding: 0; }
+.left{text-align: left;}
+.center{text-align: center;}
+body {position:relative; font-family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋움',dotum,sans-serif; color:#555}
+select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋움',dotum,sans-serif; color:#555; background:none}
+
+.inputID {
+  text-align: center;
+  background: #fff url(../images/bgIDSomeView.png) no-repeat center 50px;
+  background-size: 30% auto;
+  padding: 180px 0 60px 0;
+  border: solid 1px #ccc;
+  margin: 0 3%;
+  border-radius: 2px;
+}
+
+.inputID label {
+  padding: 10px 0;
+  display: block;
+  font-size: 16px;
+  line-height: 1.3em;
+}
+
+.inputID input[type="text"] {
+  text-align: center;
+}
+
+.inputID .h2 label,
+.inputID label.h2 {
+  font-weight: 600;
+}
+
+/* PC */
+@media ( min-width: 801px ) {
+	
+/* 로그인 & 회원가입 */
+.popup{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color:rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+.loginInput{
+	background-color: white;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 18px;
+    margin-top: 200px;
+	padding: 20px;
+}
+.loginInput a{
+	float: right;
+    text-align: center;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #b892f5;
+}
+.loginInput table{
+    margin: 0 auto;
+    width: 80%;
+}
+.loginInput table tr{
+	height: 50px;
+	margin: 20px auto;
+}
+.loginInput table td{
+	font-size: 15px;
+    font-weight: 600;
+    height: 50px;
+}
+.loginInput table input{
+	border: 1px solid #b892f5;
+	width: 100%;
+	height: 40px;
+	line-height : 40px;
+	text-align: left;
+	padding-left: 10px;
+	font-size: 20px;
+}
+.loginInput table td button{
+	width: 200px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #b892f5;
+    border-radius: 25px;
+}
+
+
+
+.regInput{
+	background-color: white;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 18px;
+    margin-top: 200px;
+	padding: 20px;
+}
+.regInput a{
+	float: right;
+    text-align: center;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #b892f5;
+}
+.regInput table{
+    margin: 0 auto;
+    width: 80%;
+}
+.regInput table tr{
+	height: 50px;
+	margin: 20px auto;
+}
+.regInput table td{
+	font-size: 15px;
+    font-weight: 600;
+    height: 50px;
+}
+.regInput table input{
+	border: 1px solid #b892f5;
+	width: 100%;
+	height: 40px;
+	line-height : 40px;
+	text-align: left;
+	padding-left: 10px;
+	font-size: 20px;
+}
+.regInput table td button{
+	width: 200px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #b892f5;
+	border-radius: 25px;
+}
+
+/* 약관 동의 */
+.agree{
+	width: 80%;
+	margin: 0 auto;
+}
+.agreeCheck{
+	text-align: left;
+}
+.agreeTextArea{
+	width: 100%;
+    margin: 0 auto;
+    overflow: scroll;
+    height: 150px;
+    border: 1px solid black;
+}
+.agree input{
+	margin: 20px 0;
+	float: left;
+}
+.agree label{
+	float: left;
+	line-height: 52px;
+}
+.agree button{
+	width: 200px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #b892f5;
+	border-radius: 25px;
+}
+
+.counInput{
+	background-color: white;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 18px;
+    margin-top: 200px;
+	padding: 20px;
+}
+.counInput a{
+	float: right;
+    text-align: center;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #b892f5;
+}
+.counInputDiv{
+	width: 100%;
+}
+.counInputP{
+	text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+}
+.counInputInput{
+	font-size: 20px;
+    border: 1px solid black;
+    width: 100%;
+    margin: 10px 0;
+    text-align: left;
+    padding-left: 7px;
+}
+.counInputButton{
+	width: 200px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #b892f5;
+	border-radius: 25px;
+}
+/* 사이드 바 */
+.sideBar{
+	position: fixed;
+	z-index: 999;
+	top: 75%;
+    left: 0px;
+    background: #68c2d6;
+    width: 65px;
+    height: 70px;
+    border-radius: 0 50px 50px 0;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 15px 10px 5px;
+    box-shadow: rgb(76 187 211) 0px 3px;
+    cursor: pointer;
+}
+
+.sideBar .ico_write{
+	background:url(../images/ico/ico_write.png) center center no-repeat;
+	display:block;
+	background-size:40px;
+	width:40px;
+	height:40px;
+	margin-left:14px;
+	margin-bottom:8px;
+}
+
+.sideBar button{
+	color: #fff;
+	cursor: pointer;
+}
+
+.sideBar ul li{
+	width: 50px;
+	height: 50px;
+	background-color: #434769;
+    line-height: 100px;
+    border: 2px solid black;
+    color: black;
+    margin: 2px 0;
+}
+
+.sideBar img{
+	width: 40px;
+    height: 40px;
+    display: block;
+    padding: 5px;;
+    filter: invert(100%);
+}
+/* 상단 로그 및 헤더 */
+.header{
+	width: 1200px;
+	margin: 0 auto;
+	display: inline-flex;
+}
+.l{
+	width: 300px;
+}
+.logoImg{
+	margin: 20px auto;
+}
+.mBtn{
+	line-height:110px;
+	width: 300px;
+	font-size: 13px;
+}
+.mBtn a{
+	padding: 0 5px;
+}
+.cBtn{
+	border-left: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+}
+
+/* 상단 네비게이션 바 */
+.navi{
+	width: 100%;
+	height: 50px;
+	margin: 0 auto;
+	border-bottom: 1px solid #e3e3e3;
+	border-top: 1px solid #e3e3e3;
+	position: relative;
+    z-index: 10;
+}
+.navi ul{
+	width: 1200px;
+	margin: 0 auto;
+}
+.fNaviLi{
+	width: 20%;
+	height: 50px;
+	display: inline-block;
+	line-height: 50px;
+	float: left;
+}
+.mainA{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.fNaviLi ul{
+	width: 100%;
+	background-color: #343434;
+	display: none;
+	height:120px;
+}
+.sNaviLi{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+}
+.sNaviLi a{
+	color: white;
+}
+
+/* 슬라이드 */
+.mainSlide{
+	width: 100%;
+	min-width : 1200px;
+}
+.mainSlideDiv{
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%;
+}
+.mainSlideUl{
+	width: 100%;
+}
+.mainSlideLi{
+	width: 100%;
+	min-width : 1200px;
+}
+.mainSlideLi:not(:first-child){
+	position: absolute;
+	opacity : 0;
+}
+.mainSlideImg{
+	width: 100%;
+	min-width : 1200px;
+}
+
+/* 중간 라인 */
+.CheckLine{
+	display: block;
+	width: 100%;
+	min-width : 1200px;
+	height: 30px;
+	background-color: #4a414a;
+}
+
+/* 로드맵 */
+.loadMapImgDiv{
+	width: 100%;
+	padding : 40px 0;
+}
+
+.loadMapImg{
+	min-width: 1200px;
+}
+
+/* 메인 과정 */
+.processDiv{
+	width: 100%;
+	min-width : 1200px;
+	padding : 50px 0;
+	background-color: #fff;
+}
+.processUl{
+	width: 1200px;
+	margin: 0 auto;
+}
+.processLi{
+	display: inline-block;
+	width: 250px;
+	margin: 0 25px;
+}
+.processImg{
+	width: 100%;
+}
+
+/* 상담신청 */
+.requestTestDiv{
+	width: 100%;
+	min-width : 1200px;
+	height: 800px;
+	line-height: 800px;
+	padding : 25px 0;
+}
+.requestTestDiv button{
+	width: 400px;
+    height: 100px;
+    font-size: 30px;
+    font-weight: 600;
+    border: 2px solid #d76bff;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+.requestTestTableDiv{
+	width: 100%;
+	min-width : 1200px;
+	padding : 25px 0;
+	position: absolute;
+	display: none;
+}
+.requestTestTableDiv button{
+	width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid #d76bff;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+
+.requestTestTable{
+	width: 1200px;
+	margin: 0 auto;
+}
+.requestTestTable td{
+	border: 1px solid black;
+}
+.requestTestTable img{
+	width: 200px;
+}
+.requestTestTable input[type="radio"]{
+	width: 100%;
+	font-size: 10px;
+}
+.requestTestFormTable{
+	width: 800px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 600;
+    border-spacing: 0px;
+    border-style: none;
+    padding: 0px;
+    border: 1px solid black;
+}
+.requestTestFormTable tr{
+	height: 50px;
+}
+.requestTestFormTable td{
+	
+	border: 1px solid black;
+}
+.requestTestFormTable input{
+    height: 50px;
+    font-size: 25px
+}
+/* 지도 */
+.mapInfoDiv{
+	width: 100%;
+	min-width : 1200px;
+	padding : 50px 0;
+	background-image: url("../images/mapBG.jpg");
+}
+.mapInfoImg{
+	width: 700px;
+}
+.mapInfoTable{
+	background-color: #7c7c7c;
+	width: 700px;
+	margin: 0 auto;
+	color: white;
+	border-spacing: 0px;
+    border-style: none;
+    padding: 0px;
+    text-align: left;
+}
+.mapInfoTable tr{
+	height: 40px;
+}
+.mapInfoTable tr td{
+	border: 2px solid white;
+}
+
+/* 풋터 */
+.footerDiv{
+	width: 100%;
+	min-width : 1200px;
+	background-color: #171c2a;
+}
+.footMain{
+	width: 1200px;
+	display: inline-flex;
+}
+.logosDiv{
+	padding: 10px;
+	width: 50%;
+}
+.textDivArea{
+	padding: 10px;
+}
+.textDivArea h1{
+	text-align: left;
+	color: #d7d7d7;
+}
+.textDivArea P{
+	text-align: left;
+	color: #d7d7d7;
+	font-size: 12px;
+}
+.footerB{
+	width: 1200px;
+	display: inline-flex;
+}
+.footerB div{
+	padding: 10px;
+	margin: 0 auto;
+}
+.footerB div p{
+	text-align: center;
+	color: #d7d7d7;
+	font-size: 13px;
+}
+
+/* 상세 페이지 */
+.locationArea{
+	width: 100%;
+	min-width : 1200px;
+	background-image: url(../images/BG/pageBG1.jpg);
+	padding: 100px 0;
+}
+
+.locationArea h1{
+	color: white;
+    font-size: 50px;
+}
+
+.locationArea p{
+	font-size: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: white;
+}
+.detailImg{
+	width: 100%;
+	min-width : 1200px;
+}
+.fP{
+	width: 400px;
+	border-left: 3px solid #b892f5;
+	border-right: 3px solid #b892f5;
+}
+.textArea{
+	width: 1200px;
+	margin : 100px auto;
+	min-width : 1200px;
+}
+.textArea h2{
+	font-size: 30px;
+    font-weight: 700;
+    margin: 50px auto;
+}
+.textArea p{
+	font-size: 18px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.CounSeliArea{
+	width: 800px;
+    margin: 100px auto;
+    min-width: 800px;
+}
+.CounSeliP{
+	font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    margin: 10px 0;
+}
+.CounSeliInput{
+	border: 1px solid black;
+    width: 800px;
+    height: 30px;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.CounSeliButton{
+	width: 200px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #b892f5;
+	border-radius: 25px;
+	margin-top: 20px;
+}
+
+}
+@media ( max-width: 800px ) {
+	.mBtn{display: none;}
+	.navi{display: none;}
+	.sideBar{display: none;}
+	.logoImg{
+		max-height: 40px;
+	}
+	/* 모바일 슬라이드 (모바일) */
+	.mainSlide{
+		width: 100%;
+	}
+	.mainSlideDiv{
+		margin: 0 auto;
+		overflow: hidden;
+		width: 100%;
+	}
+	.mainSlideUl{
+		width: 100%;
+	}
+	.mainSlideLi{
+		width: 100%;
+	}
+	.mainSlideLi:not(:first-child){
+		position: absolute;
+		opacity : 0;
+	}
+	.mainSlideImg{
+		width: 100%;
+	}
+	
+	/* 중간 라인 (모바일) */
+	.CheckLine{
+		display: block;
+		width: 100%;
+		height: 30px;
+		background-color: #4a414a;
+	}
+	
+	/* 로드맵 (모바일) */
+	.loadMapImgDiv{
+		width: 100%;
+		padding : 40px 0;
+	}
+	
+	.loadMapImg{
+		width: 100%;
+	}
+	
+	/* 메인 과정 (모바일) */
+	.processDiv{
+		width: 100%;
+		padding : 50px 0;
+		background-color: #f7f5f7;
+	}
+	.processUl{
+		margin: 0 auto;
+	}
+	.processLi{
+		display: inline-block;
+		width: 250px;
+		margin: 0 25px;
+	}
+	.processImg{
+		width: 100%;
+	}
+	
+	/* 상담신청 (모바일) */
+	.requestTestDiv{
+		width: 100%;
+		height: 800px;
+		line-height: 800px;
+		padding : 25px 0;
+	}
+	.requestTestDiv button{
+		width: 100%;
+	    height: 100px;
+	    font-size: 30px;
+	    font-weight: 600;
+	    border: 2px solid #d76bff;
+	    border-radius: 15px;
+	    background-color: black;
+	    color: white;
+	}
+	.requestTestTableDiv{
+		width: 100%;
+		min-width : 1200px;
+		padding : 25px 0;
+		position: absolute;
+		display: none;
+	}
+	.requestTestTableDiv button{
+		width: 200px;
+	    height: 50px;
+	    font-size: 20px;
+	    font-weight: 600;
+	    border: 2px solid #d76bff;
+	    border-radius: 15px;
+	    background-color: black;
+	    color: white;
+	}
+	
+	.requestTestTable{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.requestTestTable td{
+		border: 1px solid black;
+	}
+	.requestTestTable img{
+		width: 200px;
+	}
+	.requestTestTable input[type="radio"]{
+		width: 100%;
+		font-size: 10px;
+	}
+	.requestTestFormTable{
+		width: 800px;
+	    margin: 0 auto;
+	    font-size: 20px;
+	    font-weight: 600;
+	    border-spacing: 0px;
+	    border-style: none;
+	    padding: 0px;
+	    border: 1px solid black;
+	}
+	.requestTestFormTable tr{
+		height: 50px;
+	}
+	.requestTestFormTable td{
+		
+		border: 1px solid black;
+	}
+	.requestTestFormTable input{
+	    height: 50px;
+	    font-size: 25px
+	}
+	
+	/* 지도 (모바일) */
+	.mapInfoDiv{
+		width: 100%;
+		padding : 50px 0;
+		background-image: url("../images/mapBG.jpg");
+	}
+	.mapInfoImg{
+		width: 100%;
+	}
+	.mapInfoTable{
+		background-color: #7c7c7c;
+		width: 100%;
+		margin: 0 auto;
+		color: white;
+		border-spacing: 0px;
+	    border-style: none;
+	    padding: 0px;
+	}
+	.mapInfoTable tr{
+		height: 40px;
+	}
+	.mapInfoTable tr td{
+		border: 2px solid white;
+	}
+	
+	/* 풋터 (모바일) */
+	.footerDiv{
+		width: 100%;
+		background-color: #171c2a;
+	}
+	.footMain{
+		width: 100%;
+		display: inline-flex;
+	}
+	.logosDiv{
+		padding: 10px;
+		width: 50%;
+	}
+	.textDivArea{
+		padding: 10px;
+	}
+	.textDivArea h1{
+		text-align: left;
+		color: #d7d7d7;
+	}
+	.textDivArea P{
+		text-align: left;
+		color: #d7d7d7;
+		font-size: 10px;
+	}
+	.footerB{
+		width: 100%;
+		display: inline-flex;
+	}
+	.footerB div{
+		padding: 10px;
+		margin: 0 auto;
+	}
+	.footerB div p{
+		text-align: center;
+		color: #d7d7d7;
+		font-size: 10px;
+	}
+	
+	
+	/* 상세 페이지 */
+	.locationArea{
+		width: 100%;
+		background-image: url(../images/BG/pageBG1.jpg);
+		padding: 20px 0;
+	}
+	
+	.locationArea h1{
+		color: white;
+		font-size: 20px;
+	}
+	
+	.locationArea p{
+		font-size: 10px;
+	    margin-top: 10px;
+	    font-weight: 600;
+	    color: white;
+	}
+	.detailImg{
+		width: 100%;
+	}
+	.fP{
+		border-left: 3px solid #b892f5;
+	}
+	.textArea{
+		margin : 30px auto;
+		width: 100%;
+	}
+	.textArea h2{
+		font-size: 20px;
+	    font-weight: 700;
+	    margin: 20px 0;
+	}
+	.textArea p{
+		font-size: 10px;
+	    line-height: 20px;
+	}
+}
+
+
+/*추가*/
+.processArea{
+	height:400px;
+	background:#674ee7;
+	position:relative;
+}
+
+.processBg{
+	background: url(/images/ico/img_cap.png) center center no-repeat;
+	width: 300px;
+	height:300px;
+	position:absolute;
+	left: 20px;
+    top: -250px;
+}
+
+.processBoxDiv{
+	display: inline-block;
+    top: 70px;
+    position: relative;
+    left: 45px;
+}
+
+.prcessTitle{
+	width:315px;
+	height:216px;
+	display:inline-block;
+	position:relative;
+	top:40px;
+	background: url(/images/ico/img_processTitle.png) center center no-repeat;
+}
+.processBox{
+	background: url(/images/ico/img_processBox.png) top center no-repeat;
+	width:194px;
+	height:272px;
+	margin-right:20px;
+	padding: 25px;
+    box-sizing: border-box;
+    position:relative;
+}
+
+.processBox h4{
+	text-align: left;
+    font-size: 20px;
+    margin-bottom:25px;
+}
+.processBox li{
+	line-height:1.5
+}
+
+.processBox .btn_arrowR{
+	width: 170px;
+    height: 38px;
+    background-color: #543cd0;
+    background-image: url(../images/ico/ico_arrowR.png);
+    background-position: 30px 5px;
+    color: #fff;
+    position: absolute;
+    bottom: 4px;
+    left: 12px;
+    background-repeat: no-repeat;
+    text-indent: 29px;
+}
+
+    
+.top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.top-btn__arrow {
+	background : url(../images/ico/pageUp.svg) no-repeat center #ffffff;
+	display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background-size: 70%;
+}
+
+.top-btn__txt {
+	color:#fff;
+}
+
+.dim{
+	display:none;
+	background: #000;
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 998;
+}
+.pageLock{
+	overflow:hidden;
+}
+
+.popEsc{
+	position: absolute;
+	width: 20px;
+    height: 20px;
+    right: 20px;
+    background:url(../images/ico/ico_esc.png) no-repeat;
+}
+.requestDiv{
+	display:none;
+	width:335px;
+	position: fixed;
+	border-radius:10px;
+	background:#fff;
+	box-shadow: rgba(0,0,0,0.5) 2px 2px;
+	top:10%;
+	margin-left:calc((100% - 370px)/2);
+	padding:20px;
+	z-index:999;
+}
+
+.requestDiv span{
+	margin-top:25px;
+	font-weight:bold;
+	background:linear-gradient(to bottom, transparent 0px 10px, #cbe5e5 4px 20px, transparent 15px 20px);
+	padding: 0 5px;
+}
+
+.requestTit{
+	font-weight: bold;
+    font-size: 20px;
+    width: 290x;
+    margin: 20px auto;
+}
+
+.requestList > div{
+	margin-bottom:7px;
+}
+
+.requestList input[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.requestList input[type=radio] + label{
+	position : relative;
+	width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding: 12px 12px 12px 45px;
+    box-sizing: border-box;
+    background:#ebecf0;
+	border-radius:5px;
+}
+
+.requestList [type=radio]:checked + label{
+	background:#cbe0e5;
+}
+
+.requestList input[type=radio] + label:before{
+	content:'';
+	position:absolute;
+	display:inline-block;
+	width:32px;
+	height:32px;
+	background:url(../images/btn_radio.png) no-repeat;
+	background-position: -32px 0;
+	left:6px;
+	top:6px;
+}
+
+.requestList [type=radio]:checked + label:before{
+	background-position: 0 0;
+	
+}
+
+.requestDiv .btnNext, .requestDiv .btnPrev{
+	font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 20px;
+}
+
+.fl{float:left}
+.fr{float:right}
