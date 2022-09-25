@@ -1,13 +1,11 @@
 /* 기본 초기화 */
 *{ margin: 0; padding: 0; border: 0; text-align: center;}
 a{ text-decoration: none; color: black; margin: 0; padding: 0;}
-ul, li{ list-style: none; text-align:left }
-table{ padding: 0; border: 0; border-spacing: 0px; border-collapse: collapse; }
+ul, li{ list-style: none; }
+talbe{ padding: 0; border: 0; border-spacing: 0px; border-collapse: collapse; }
 th, tr, td{ padding: 0; }
 .left{text-align: left;}
 .center{text-align: center;}
-body {position:relative; font-family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋움',dotum,sans-serif; color:#555}
-select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋움',dotum,sans-serif; color:#555; background:none}
 
 .inputID {
   text-align: center;
@@ -94,9 +92,19 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
     background-color: #b892f5;
     border-radius: 25px;
 }
-
-
-
+.upBtn{
+	position: fixed;
+	bottom: 60px;
+	right: 70px;
+}
+.upBtn li a{
+	display: block;
+	background-color: #434769;
+	border: 2px solid black;
+}
+.mobileManuBtn{
+	display: none;
+}
 .regInput{
 	background-color: white;
     width: 500px;
@@ -219,33 +227,9 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 /* 사이드 바 */
 .sideBar{
 	position: fixed;
-	z-index: 999;
-	top: 75%;
-    left: 0px;
-    background: #68c2d6;
-    width: 65px;
-    height: 70px;
-    border-radius: 0 50px 50px 0;
-    color: #fff;
-    font-size: 14px;
-    padding: 10px 15px 10px 5px;
-    box-shadow: rgb(76 187 211) 0px 3px;
-    cursor: pointer;
-}
-
-.sideBar .ico_write{
-	background:url(../images/ico/ico_write.png) center center no-repeat;
-	display:block;
-	background-size:40px;
-	width:40px;
-	height:40px;
-	margin-left:14px;
-	margin-bottom:8px;
-}
-
-.sideBar button{
-	color: #fff;
-	cursor: pointer;
+	z-index: 5;
+	top: 250px;
+    left: 50px;
 }
 
 .sideBar ul li{
@@ -289,8 +273,17 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	border-left: 1px solid #e3e3e3;
 	border-right: 1px solid #e3e3e3;
 }
+.fixed{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
 
 /* 상단 네비게이션 바 */
+.naviMoblie{
+	display: none;
+}
 .navi{
 	width: 100%;
 	height: 50px;
@@ -320,7 +313,6 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	width: 100%;
 	background-color: #343434;
 	display: none;
-	height:120px;
 }
 .sNaviLi{
 	width: 100%;
@@ -332,6 +324,9 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 }
 
 /* 슬라이드 */
+.mainSlideDivMobile{
+	display: none;
+}
 .mainSlide{
 	width: 100%;
 	min-width : 1200px;
@@ -342,15 +337,13 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	width: 100%;
 }
 .mainSlideUl{
-	width: 100%;
+	width: 10000px;;
 }
 .mainSlideLi{
-	width: 100%;
 	min-width : 1200px;
+	float: left;
 }
 .mainSlideLi:not(:first-child){
-	position: absolute;
-	opacity : 0;
 }
 .mainSlideImg{
 	width: 100%;
@@ -381,7 +374,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	width: 100%;
 	min-width : 1200px;
 	padding : 50px 0;
-	background-color: #fff;
+	background-color: #f7f5f7;
 }
 .processUl{
 	width: 1200px;
@@ -474,24 +467,115 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	padding : 50px 0;
 	background-image: url("../images/mapBG.jpg");
 }
-.mapInfoImg{
-	width: 700px;
-}
-.mapInfoTable{
-	background-color: #7c7c7c;
-	width: 700px;
+.mapDiv{
+	width: 1200px;
 	margin: 0 auto;
-	color: white;
-	border-spacing: 0px;
-    border-style: none;
-    padding: 0px;
-    text-align: left;
+	display: flex;
 }
-.mapInfoTable tr{
+.mapInfoImg{
+	width: 870px;
+}
+.mapInfoTalbe{
+	width: 1200px;
+	margin: 20px auto;
+    padding: 0;
+    border-collapse: collapse;
+}
+.mapInfoTalbe tr{
 	height: 40px;
 }
-.mapInfoTable tr td{
-	border: 2px solid white;
+.mapInfoTalbe tr td{
+	border-bottom: 1px solid #e6e6e6; 
+}
+.mapInfoTalbe img{
+    width: 50px;
+    margin: 10px 0;
+}
+.mapInfoTalbe p{
+    margin: 10px 0;
+}
+.mapInfoTalbe h3{
+    margin: 10px 0;
+}
+.mapInfoTalbe2{
+	width: 330px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #efefef;
+	border-collapse: collapse;
+	border: 1px solid #adadad;
+}
+.mapInfoTalbe2 tr{
+	width: 100%;
+	height: 40px;
+	font-size: 15px;
+	
+}
+.mapInfoTalbe2 tr td{
+	background-color: #efefef;
+}
+.mapInfoTalbe2 tr td p{
+	margin: 0;
+	padding: 0;
+	font-weight: 700;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.tableDiv{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.noticeMain{
+	width: 100%;
+	border-top: 3px solid #b892f5;
+	border-bottom: 3px solid #b892f5;
+    border-collapse: collapse;
+}
+.firstTr{
+	font-weight: 700;
+}
+.noticeTr{
+	border-bottom: 1px solid #b892f5;
+	line-height: 40px;
+    font-size: 17px;
+}
+.noticeTitle{
+	text-align: left;
+}
+.nowPage{
+	font-weight: 700;
+	color: #4949e0;
+}
+.blockBtn{
+	color: #b892f5;
+	margin: 5px;
+    font-size: 20px;
+}
+.pageBtn{
+	color: #b892f5;
+	margin: 5px;
+    font-size: 20px;
+}
+.serchBox{
+	border: 1px solid #b892f5;
+    width: 200px;
+    margin: 10px;
+    text-align: left;
+    padding-left: 5px;
+    line-height: 20px;
+}
+.serchBtn{
+	width: 70px;
+    color: white;
+    background-color: #b892f5;
+    line-height: 20px;
+}
+.boardMainArea{
+	width : 100%;
+	padding: 40px 0;
+	display: inline-block;
 }
 
 /* 풋터 */
@@ -577,6 +661,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
     margin: 10px 0;
     font-weight: 600;
 }
+
 .CounSeliArea{
 	width: 800px;
     margin: 100px auto;
@@ -614,29 +699,32 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	.logoImg{
 		max-height: 40px;
 	}
-	/* 모바일 슬라이드 (모바일) */
+	/* 슬라이드 */
 	.mainSlide{
 		width: 100%;
 	}
 	.mainSlideDiv{
+		display:none;
+	}
+	.mainSlideDivMobile{
 		margin: 0 auto;
 		overflow: hidden;
 		width: 100%;
 	}
-	.mainSlideUl{
+	.mainSlideUlMobile{
 		width: 100%;
 	}
-	.mainSlideLi{
-		width: 100%;
+	.mainSlideLiMobile{
+		float: left;
 	}
-	.mainSlideLi:not(:first-child){
+	.mainSlideLiMobile:not(:first-child){
 		position: absolute;
-		opacity : 0;
+		opacity: 0;
 	}
-	.mainSlideImg{
+	.mainSlideImgMobile{
 		width: 100%;
+		max-width: 800px
 	}
-	
 	/* 중간 라인 (모바일) */
 	.CheckLine{
 		display: block;
@@ -672,7 +760,24 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	.processImg{
 		width: 100%;
 	}
-	
+	.upBtn{
+		position: fixed;
+		bottom: 60px;
+		right: 30px;
+	}
+	.upBtn li a{
+		display: block;
+		background-color: #434769;
+		border: 2px solid black;
+	}
+	.mobileManuBtn{
+		width: 50px;
+	    height: 44px;
+	    position: absolute;
+	    right: 0;
+	    font-size: 35px;
+	    background-color: white;
+	}
 	/* 상담신청 (모바일) */
 	.requestTestDiv{
 		width: 100%;
@@ -692,7 +797,6 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	}
 	.requestTestTableDiv{
 		width: 100%;
-		min-width : 1200px;
 		padding : 25px 0;
 		position: absolute;
 		display: none;
@@ -723,7 +827,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 		font-size: 10px;
 	}
 	.requestTestFormTable{
-		width: 800px;
+		width: 70%;
 	    margin: 0 auto;
 	    font-size: 20px;
 	    font-weight: 600;
@@ -753,22 +857,57 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	.mapInfoImg{
 		width: 100%;
 	}
-	.mapInfoTable{
-		background-color: #7c7c7c;
+	.mapDiv{
 		width: 100%;
 		margin: 0 auto;
-		color: white;
-		border-spacing: 0px;
-	    border-style: none;
-	    padding: 0px;
 	}
-	.mapInfoTable tr{
+	.mapInfoTalbe{
+		width: 100%;
+		margin: 20px auto;
+	    padding: 0;
+	    border-collapse: collapse;
+	}
+	.mapInfoTalbe tr{
 		height: 40px;
 	}
-	.mapInfoTable tr td{
-		border: 2px solid white;
+	.mapInfoTalbe tr td{
+		border-bottom: 1px solid #e6e6e6; 
 	}
-	
+	.mapInfoTalbe img{
+	    width: 50px;
+	    margin: 10px 0;
+	}
+	.mapInfoTalbe p{
+	    margin: 10px 0;
+	    font-size: 12px;
+	}
+	.mapInfoTalbe h3{
+	    margin: 10px 0;
+	}
+
+	.mapInfoTalbe2{
+		width: 100%;
+		margin: 0 auto;
+		padding: 0;
+		background-color: #efefef;
+		border-collapse: collapse;
+		border: 1px solid #adadad;
+	}
+	.mapInfoTalbe2 tr{
+		width: 100%;
+		font-size: 15px;
+	}
+	.mapInfoTalbe2 tr td{
+		background-color: #efefef;
+		border: 1px solid #adadad;
+	}
+	.mapInfoTalbe2 tr td p{
+		margin: 0;
+		padding: 0;
+		font-weight: 700;
+		padding-right: 5px;
+	}
+		
 	/* 풋터 (모바일) */
 	.footerDiv{
 		width: 100%;
@@ -846,230 +985,134 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 		font-size: 10px;
 	    line-height: 20px;
 	}
-}
-
-
-/*추가*/
-.processArea{
-	height:400px;
-	background:#674ee7;
-	position:relative;
-}
-
-.processBg{
-	background: url(/images/ico/img_cap.png) center center no-repeat;
-	width: 300px;
-	height:300px;
-	position:absolute;
-	left: 20px;
-    top: -250px;
-}
-
-.processBoxDiv{
-	display: inline-block;
-    top: 70px;
-    position: relative;
-    left: 45px;
-}
-
-.prcessTitle{
-	width:315px;
-	height:216px;
-	display:inline-block;
-	position:relative;
-	top:40px;
-	background: url(/images/ico/img_processTitle.png) center center no-repeat;
-}
-.processBox{
-	background: url(/images/ico/img_processBox.png) top center no-repeat;
-	width:194px;
-	height:272px;
-	margin-right:20px;
-	padding: 25px;
-    box-sizing: border-box;
-    position:relative;
-}
-
-.processBox h4{
-	text-align: left;
-    font-size: 20px;
-    margin-bottom:25px;
-}
-.processBox li{
-	line-height:1.5
-}
-
-.processBox .btn_arrowR{
-	width: 170px;
-    height: 38px;
-    background-color: #543cd0;
-    background-image: url(../images/ico/ico_arrowR.png);
-    background-position: 30px 5px;
-    color: #fff;
-    position: absolute;
-    bottom: 4px;
-    left: 12px;
-    background-repeat: no-repeat;
-    text-indent: 29px;
-}
-
-    
-.top-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 120px;
-  align-items: center;
-  padding: 10px 12px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.top-btn__arrow {
-	background : url(../images/ico/pageUp.svg) no-repeat center #ffffff;
-	display: inline-block;
-    vertical-align: middle;
-    width: 32px;
-    height: 32px;
-    margin-right: 5px;
-    border-radius: 50%;
-    background-size: 70%;
-}
-
-.top-btn__txt {
-	color:#fff;
-}
-
-.dim{
-	display:none;
-	background: #000;
-    opacity: 0.5;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 998;
-}
-.pageLock{
-	overflow:hidden;
-}
-
-.popEsc{
-	position: absolute;
-	width: 20px;
-    height: 20px;
-    right: 20px;
-    background:url(../images/ico/ico_esc.png) no-repeat;
-}
-.requestDiv{
-	display:none;
-	width:335px;
-	position: fixed;
-	border-radius:10px;
-	background:#fff;
-	box-shadow: rgba(0,0,0,0.5) 2px 2px;
-	top:10%;
-	margin-left:calc((100% - 370px)/2);
-	padding:20px;
-	z-index:999;
-}
-
-.requestDiv span{
-	margin-top:25px;
-	font-weight:bold;
-	background:linear-gradient(to bottom, transparent 0px 10px, #cbe5e5 4px 20px, transparent 15px 20px);
-	padding: 0 5px;
-}
-
-.requestTit{
-	font-weight: bold;
-    font-size: 20px;
-    width: 290x;
-    margin: 20px auto;
-}
-
-.requestList > div{
-	margin-bottom:7px;
-}
-
-.requestList input[type=radio] { 
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.requestList input[type=radio] + label{
-	position : relative;
-	width: 100%;
-    display: inline-block;
-    text-align: left;
-    padding: 12px 12px 12px 45px;
-    box-sizing: border-box;
-    background:#ebecf0;
-	border-radius:5px;
-}
-
-.requestList [type=radio]:checked + label{
-	background:#cbe0e5;
-}
-
-.requestList input[type=radio] + label:before{
-	content:'';
-	position:absolute;
-	display:inline-block;
-	width:32px;
-	height:32px;
-	background:url(../images/btn_radio.png) no-repeat;
-	background-position: -32px 0;
-	left:6px;
-	top:6px;
-}
-
-.requestList [type=radio]:checked + label:before{
-	background-position: 0 0;
+	/* 테스트 */
 	
+	.tableDiv{
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+	.noticeMain{
+		width: 100%;
+		border-top: 3px solid #b892f5;
+		border-bottom: 3px solid #b892f5;
+	    border-collapse: collapse;
+	}
+	.firstTr{
+		font-weight: 700;
+	}
+	.noticeTr{
+		border-bottom: 1px solid #b892f5;
+		line-height: 20px;
+	    font-size: 10px;
+	}
+	.noticeTitle{
+		text-align: left;
+	}
+	.nowPage{
+		font-weight: 700;
+		color: #4949e0;
+	}
+	.blockBtn{
+		color: #b892f5;
+		margin: 5px;
+	    font-size: 20px;
+	}
+	.pageBtn{
+		color: #b892f5;
+		margin: 5px;
+	    font-size: 20px;
+	}
+	.serchBox{
+		border: 1px solid #b892f5;
+	    width: 200px;
+	    margin: 10px;
+	    text-align: left;
+	    padding-left: 5px;
+	    line-height: 20px;
+	}
+	.serchBtn{
+		width: 70px;
+	    color: white;
+	    background-color: #b892f5;
+	    line-height: 20px;
+	}
+	.boardMainArea{
+		width : 100%;
+		padding: 40px 0;
+		display: inline-block;
+	}
+	.boardMainArea img{
+		width : 100%;
+	}
+	
+	.CounSeliArea{
+		width: 80%;
+	    margin: 100px auto;
+	}
+	.CounSeliP{
+		font-size: 18px;
+	    font-weight: 600;
+	    text-align: left;
+	    margin: 10px 0;
+	}
+	.CounSeliInput{
+		border: 1px solid black;
+	    width: 100%;
+	    height: 30px;
+	    text-align: left;
+	    font-size: 20px;
+	    padding-left: 10px;
+	}
+	.CounSeliButton{
+		width: 200px;
+	    height: 40px;
+	    font-size: 18px;
+	    font-weight: 600;
+	    background-color: #b892f5;
+		border-radius: 25px;
+		margin-top: 20px;
+	}
+	
+	
+	.naviMoblie{
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		position: absolute;
+	    z-index: 10;
+	    display: none;
+	    background-color: white;
+    	top: 0;
+	}
+	.naviMoblie ul{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.fNaviLiMoblie{
+		width: 100%;
+		height: 70px;
+		display: contents;
+		line-height: 70px;
+		border: 1px solid #e6e6e6;
+	}
+	.mainAMoblie{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	.fNaviLiMoblie ul{
+		width: 100%;
+		background-color: #343434;
+		display: none;
+	}
+	.sNaviLiMoblie{
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+	}
+	.sNaviLiMoblie a{
+		color: white;
+	}
 }
 
-.requestDiv .btnNext, .requestDiv .btnPrev{
-	font-size: 16px;
-    font-weight: bold;
-    color: #000;
-    margin-top: 20px;
-}
-
-.detailBox{
-	width: 1200px;
-	min-width : 1200px;
-	margin: 100px auto;
-}
-
-.detailBox.step > div{
-	clear:both;
-	margin-bottom:50px;
-}
-
-.detailBox.step .w30{
-	background: #123867;
-    color: #fff;
-    padding: 49px 0px;
-    border-bottom: 1px solid #123867;
-    box-sizing:border-box
-}
-
-.detailBox.step .w70{
-	border:1px solid #123867;
-	border-top:0px;
-	padding: 15px;
-	box-sizing: border-box;
-	line-height: 1.7;
-}
-
-.detailBox.step div:nth-child(1) .w70{
-	border-top:1px solid #123867;
-}
-.fl{float:left}
-.fr{float:right}
-.w30{width:20%}
-.w70{width:80%}
