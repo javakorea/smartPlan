@@ -923,6 +923,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
   background: rgba(0, 0, 0, 0.6);
   border-radius: 30px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .top-btn__arrow {
@@ -1039,36 +1040,74 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
     margin-top: 20px;
 }
 
+.requestList > p {
+	text-align:left;
+	font-weight:bold;
+}
+.requestList .requestIpt{
+	position : relative;
+	width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding: 12px;
+    box-sizing: border-box;
+    background:#ebecf0;
+	border-radius:5px;
+	margin-bottom:20px;
+}
+
+.btnReq{
+	position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 12px;
+    box-sizing: border-box;
+    background: #68c2d6;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 .detailBox{
 	width: 1200px;
 	min-width : 1200px;
 	margin: 100px auto;
 }
 
-.detailBox.step > div{
-	clear:both;
-	margin-bottom:50px;
+.detailBox table{
+	width: 100%
 }
 
-.detailBox.step .w30{
+.detailBox.subject table{
+	border-spacing: 8px;
+    border-collapse: separate;
+}
+.detailBox.subject td{
+	padding: 12px;
+    border:1px solid #68c2d6;
+    border-radius:25px;
+    color:#1f7d91;
+}
+.detailBox.step table th{
 	background: #123867;
     color: #fff;
-    padding: 49px 0px;
-    border-bottom: 1px solid #123867;
-    box-sizing:border-box
+    width:20%;
+}
+.detailBox.step table td{
+    width:80%;
+    line-height: 1.7;
+    padding: 15px;
+    box-sizing:border-box;
 }
 
-.detailBox.step .w70{
-	border:1px solid #123867;
-	border-top:0px;
-	padding: 15px;
-	box-sizing: border-box;
-	line-height: 1.7;
+.detailBox.step table .space{
+	height:5px;
 }
 
-.detailBox.step div:nth-child(1) .w70{
-	border-top:1px solid #123867;
-}
 .fl{float:left}
 .fr{float:right}
 .w30{width:20%}
