@@ -860,6 +860,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	height:400px;
 	background:#674ee7;
 	position:relative;
+	margin-top:150px;
 }
 
 .processBg{
@@ -1122,8 +1123,24 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
     height: 220px;
     margin-top: 20px;
 }
-
-
+.detailBox.intro table{
+	border-top: 6px solid #6cb7b0;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.detailBox.intro table th{
+	padding: 10px 30px;
+    color: #000;
+    background: #ffffff;
+    text-align: left;
+    font-weight: normal;
+    border: 1px solid #4f938d;
+    width: 190px
+}
+.detailBox.intro table td{
+	text-align:left;
+}
 .detailBox.subject{
 	margin: 0 auto;
 }
