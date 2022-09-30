@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+
+/**미디어쿼리**/
+@media (max-width: 510px){
+	.container .item_text{font-size: 1.4rem !important;}
+	.container .item > p{font-size:30px}
+	.footer .f_content p > span:first-child{display:block;}
+	.footer .f_content div.f_tel > div {width:175px !important;; top:10px !important;}
+	.footer .f_content div.f_tel > div > a:first-child:after{display:none !important;}
+	
+}
+
+ @media (max-width: 991px){	/*pad*/
+ 	.header {top: 13px; height:60px; background-size: 70%; background-position: center center}
+ 	.header h1 a{top: 6px; background-size: 70%; background-position: center;}
+	.container .item {height:300px}
+	.container .item > p {width:85%; padding: 7% 0; top:13%; border-width: 5px;}
+	.container .item_text{font-size:1.7rem; margin:0}
+	.container .item_text:before, .container .item_text:after{background-size:35px; width:35px; height:35px}
+	.container .main_box{margin-bottom:0}
+	.container .main_box td{padding:20px 2%; font-size:16px}
+	.container .main_box td p:before{margin:0 auto; width:100%}
+	.container .mocaGrid img, .container .mocaGridSub img{width:80%}
+	.container .mocaGrid .left, .container .mocaGrid .right{float:none; width:100%; text-align:center}
+	.container .mocaGrid .left a.btn_more{display:none;}
+	.footer{padding-bottom:90px}
+	.footer .f_content div.f_tel {width:91%; max-width:430px; margin-top:15px; top:20px; right:0}
+	.footer .f_content div.f_tel .title{}
+	.footer .f_content div.f_tel > div {width:300px; top:24px; left:150px; font-size:19px}
+ 	.footer .f_content div.f_tel > div > a:first-child:after{content:'|'; margin:0 10px}
+	
+}
+
+@media (max-width: 1199px){	/*pad pro*/
+	.container .main_box.web{display:none}
+	.footer .f_content{padding:0 5%}
+	.footer .f_content h2{float:none}
+	.subpage table.grid .subject, .subpage table.grid td ul li{}
+	.subpage table.grid > colgroup > col:nth-child(1), .subpage table.grid > colgroup > col:nth-child(3){width:5% !important;}
+	.subpage table.grid > colgroup > col:nth-child(2){width:90% !important;}
+} 
+
+@media (min-width: 1200px){ /*pc*/
+	.container .main_box.mobile{display:none}
+}
