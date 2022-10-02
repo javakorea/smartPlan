@@ -30,12 +30,11 @@
 	}
 
  	//scrollTop
-	function fn_scroll(divClass){
+	function fn_scrollTop(){
 		$('html,body').animate({
-	    	scrollTop: 
-	        	$("."+divClass).offset().top},
-	        	'slow'
-	    	);
+			scrollTop:'0'},
+	    	'slow'
+		);
 	}
 	
 	//상담문의
@@ -133,7 +132,7 @@
 				<a href="https://abwlr75314.cafe24.com/php/detailPage1.php" class="mainA">국내교육</a>
 				<ul style="display: none;">
 					<li class="sNaviLi"><a href="./detailPage1.html">학점은행제</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage2.php">독학학위제</a></li>
+					<li class="sNaviLi"><a href="./detailPage2.html">독학학위제</a></li>
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage3.php">편입/대학원</a></li>
 				</ul>
 			</li>
@@ -177,8 +176,7 @@
 		<p class="explan">
 			학점은행제는 「학점인정 등에 관한 법률」에 의거하여 학교에서 뿐만 아니라 학교 밖에서 이루어지는 다양한 형태의 학습 및 자격을 학점으로 인정받을 수 있도록 하고,학점이 누적되어 일정 기준을 충족하면 학위취득을 가능하게 함으로써 궁극적으로 열린 학습사회, 평생학습사회를 구현하기 위한 제도입니다.
 		</p>
-		<div class="bgHak">
-		</div>
+		<div class="bgHak"></div>
 		<table>
 			<tr>
 				<th>학점인정 등에 관한 법률 제1조(목적)</th>
@@ -282,6 +280,15 @@
 				</tbody>
 			</table>
 			<table class="tbl2">
+				<colgroup>
+					<col id="th">
+					<col id="th">
+					<col id="grpTd1">
+					<col id="grpTd1">
+					<col id="grpTd2" width="0">
+					<col id="grpTd2"style="width:0">
+				</colgroup>
+					
 				<thead>
 					<tr>
 						<th colspan="2" rowspan="1">학위과정 (학습자등록시선택)</th>

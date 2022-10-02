@@ -1,37 +1,424 @@
-<table border="1">
-	<tr>
-		<td colspan="2" rowspan="1">학위과정 (학습자등록시선택)</td>
-		<td colspan="1" rowspan="1">전문학사</td>
-		<td colspan="1" rowspan="1">학사</td>
-		<td colspan="1" rowspan="1">전문학사 타전공</td>
-		<td colspan="1" rowspan="1">학사 타전공</td>
-	</tr>
-	<tr>
-		<td colspan="1" rowspan="3">학위요건</td>
-		<td colspan="1" rowspan="2">교육부 장관3)</td>
-		<td colspan="1" rowspan="1">· 총 80학점 - 전공 45학점 - 교양 15학점 - 일선 20학점</td>
-		<td colspan="1" rowspan="1">· 총 140학점 - 전공 60학점 - 교양 30학점 - 일선
-			50학점5)</td>
-		<td colspan="1" rowspan="1">· 전공 36학점</td>
-		<td colspan="1" rowspan="1">· 전공 48학점</td>
-	</tr>
-	<tr>
-		<td colspan="2" rowspan="1">. 전공필수 요건 포함 · 학습구분 관계없이 평가인정학습과정 또는
-			시간제등 록을 통해 18학점 이상 이수/포함</td>
-		<td colspan="2" rowspan="1">· 전공필수 요건 포함 · 전공과목으로 평가인정학습과정 또는
-			시간제등록을 통해 18학점 이상 이수/포함</td>
-	</tr>
-	<tr>
-		<td colspan="1" rowspan="1">대학의 장명4)</td>
-		<td colspan="4" rowspan="1">· 대학의 장 등에 의한 학위수여는 전공필수 요건 등 학점은행제
-			기본 학위수여 요건을 포함함. · 대학의 장 등에 의한 학위수여는 학칙으로 반영되어 있는 일부 대학에서 이루어지고 있으므로
-			대학의 장등에의 한 학위수여 가능여부 및 세부 학위수여요건은 각 대학에 속한 학점은행제 교육훈련기관으로 문의해야 함. 제도
-			이용 전에 교육훈련기관과 사전 상담을 요함.</td>
-	</tr>
-	<tr>
-		<td colspan="2" rowspan="1">학점취득 (학점인정 신청)</td>
-		<td colspan="1" rowspan="1">제적한 전문대학·대학 에서 이수한 학점 인정 가능</td>
-		<td colspan="1" rowspan="1">제적한 전문대학·대학및 졸업한 전문대학에서 이 수한 학점 인정 가능</td>
-		<td colspan="2" rowspan="1">학위취득 이후 이수한 학점만 등록 가능</td>
-	</tr>
-</table>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스마트플랜</title>
+<link rel="stylesheet" type="text/css" href="./css/common2.css">
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	//menu
+	$(function(){
+		manuHover();
+		sManuHover();
+	});
+	function manuHover(){
+	    $(".naviUl").hover(function(){
+	    	$(".fNaviLi ul").slideDown(300);
+	    },function(){
+	    	$(".fNaviLi ul").css("display", "none");;
+	    });
+	}
+	function sManuHover(){
+		$(".sNaviLi").hover(function(){
+	    	$(this).css("background-color", "white");
+	    	$(this).find("a").css("color", "#343434");
+	    },function(){
+	    	$(this).css("background-color", "#343434");
+	    	$(this).find("a").css("color", "white");
+	    });
+	}
+
+ 	//scrollTop
+	function fn_scrollTop(){
+		$('html,body').animate({
+			scrollTop:'0'},
+	    	'slow'
+		);
+	}
+	
+	//상담문의
+	function requestService(){
+		if($('.dim').is(':visible')){
+			$('.dim').hide();
+			$('.pageBody').removeClass('pageLock');
+			$('.requestDiv').hide();
+		}else{
+			$('.dim').show();
+			$('.pageBody').addClass('pageLock');
+			$('.requestDiv').show();
+		}
+	};
+	
+	function fn_reqNext(){
+		if($('#req01').is(':visible')){
+			if($('#req01 input[type="radio"]').is(':checked')){
+				$('#req01').hide();
+				$('#req02').show();
+				$('.btnPrev').show();
+			}else{
+				alert('선택해주세요');
+			}
+		}else if($('#req02').is(':visible')){
+			if($('#req02 input[type="radio"]').is(':checked')){
+				$('#req02').hide();
+				$('#req03').show();
+			}else{
+				alert('선택해주세요');
+			}
+		}else if($('#req03').is(':visible')){
+			if($('#req03 input[type="radio"]').is(':checked')){
+				$('#req03').hide();
+				$('#req04').show();
+				$('.btnNext').hide();
+			}else{
+				alert('선택해주세요');
+			}
+		}
+	};
+	
+	function fn_reqPrev(){
+		if($('#req02').is(':visible')){
+			$('#req02').hide();
+			$('#req01').show();
+			$('.btnPrev').hide();
+			$('.btnNext').show();
+		}else if($('#req03').is(':visible')){
+			$('#req03').hide();
+			$('#req02').show();
+			$('.btnNext').show();
+		}else if($('#req04').is(':visible')){
+			$('#req04').hide();
+			$('#req03').show();
+			$('.btnNext').show();
+		}
+	};
+	
+	function fn_popEsc(){
+		$('.dim').hide();
+		$('.requestDiv').hide();
+		$('.pageBody').removeClass('pageLock');
+	}
+</script>
+</head>
+<body class="pageBody">
+	<div class="header">
+		<div class="l"></div>
+		<a href="./index.html" style="display: contents;">
+			<img class="logoImg" alt="" src="./images/logo-top_1.png">
+		</a>
+		<div class="mBtn" id="headerBtn">
+			<a href="javascript:fn_openLogin();">로그인</a> <a
+				href="javascript:fn_openReg();" class="cBtn">회원가입</a> <a
+				href="javascript:fn_openCoun();">상담신청</a>
+		</div>
+		<div class="mBtn" id="afterBtn" style="display: none;">
+			<a href="https://abwlr75314.cafe24.com/php/index">마이페이지</a> <a
+				href="https://abwlr75314.cafe24.com/php/index">상담신청</a>
+		</div>
+	</div>
+	<div class="top-btn" onclick="fn_scrollTop()">
+		<span class="top-btn__arrow"></span> <span class="top-btn__txt">맨 위로 이동</span>
+	</div>
+	<div class="navi">
+		<ul class="naviUl">
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드 소개</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드 소개</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage1.php" class="mainA">국내교육</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="./detailPage1.html">학점은행제</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage2.php">독학학위제</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage3.php">편입/대학원</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage4.php" class="mainA">자격증</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage4.php">기사/산업기사</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage5.php">사회복지사</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage6.php">보육교사</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage7.php" class="mainA">해외교육</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage7.php">파운데이션</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage8.php">ICL학위과정정</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage9.php">ICNA고등학교과정</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">고객센터</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">공지사항</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounseling.php">상담신청</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounselingList.php">신청내역</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="sideBar" onclick="requestService();">
+		<span class="ico_write"></span>
+		<button>상담문의</button>
+	</div>
+
+	<div class="locationArea">
+		<h1>독학학위제</h1>
+		<p>HOME &gt; 국내교육 &gt; 독학학위제</p>
+	</div>
+	<div class="detailBox d2intro">
+		<h2 class="detailTit fl">독학사란?</h2>
+		<p class="explan">
+			국가에서 실시하는 학위취득 시험이며 시험에 합격하면 4년제 대학교를나온 사람과 똑같은 학력으로 인정받을 수가 있고, 학위도 교육부장관 명의로 된 4년제 학위를수여 받게 됩니다.
+		</p>
+		<div class="bgDokhak"></div>
+		<div class="grpP">
+			<p>
+				<span class="fcBlue fbold">독학학위제는</span>
+				[독학에 의한 학위취득에 관한 법률]에 의거하여 국가에서 실시하는 학위취득시험에 합격한 독학자에게 학사학위를 수여함으로써 평생교육의 이념을 구현하고 개인의 자아실현과 국가사회의 발전에 이바지하는 것을 목적으로 하는 제도입니다.
+			</p>
+			<p>
+				<span class="fcBlue fbold">독학학위제는</span>
+				대학교를 다니지 않아도 스스로 공부하여 학위를 취득할 수 있습니다.<br/>
+				입과 학습의 병합이 가능하여 시간과 비용을 최소화할 수 있습니다.<br/>
+				언제나, 어디서나 학습이 가능한 평생학습시대의 자아실현을 위한 제도입니다.
+			</p>
+			<p>
+				<span class="fcBlue fbold">독학학위제는</span>
+				고등학교 즐업 이상의 학력을 가진 사람이면 누구나 시험에 응시할 수 있습니다.<br/>
+				학위취득시험은 4개의 과정(교양과정, 전공기초과정, 전공심화과정, 학위취득 종합시험)으로 이루어져 있으며 각 과정별 시험을 모두 거쳐 학위취득 종합시험에 합격하면 학사학위를 취득할 수 있습니다.
+			</p>
+		</div>
+		
+	</div>
+	<div class="detailBox schedule">
+		<h2 class="detailTit fl">시험일정</h2>
+		<p class="explan">
+			국가에서 실시하는 학위취득 시험이며 시험에 합격하면 4년제 대학교를나온 사람과 똑같은 학력으로 인정받을 수가 있고, 학위도 교육부장관 명의로 된 4년제 학위를수여 받게 됩니다.
+		</p>
+		<table border="1">
+			<tr>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">1과정</span></td>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">교양과정 인정시험</span></td>
+				<td colspan="1" rowspan="1">
+					<ul>
+						<li>. 온라인 원서접수: 1/14(금) 10:00 ~ 1/21(금) 17:00 </li>
+						<li>. 수험표 출력: 2/18(금) 10:00 </li>
+						<li>. 시험일: 2/27(일) </li>
+						<li>· 합격자 발표:3/21(월) 10:00</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">2과정</span></td>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">전공기초과정 인정시험</span></td>
+				<td colspan="1" rowspan="1">
+					<ul>
+						<li>. 온라인 원서접수:4/8(금) 10:00~4/15(금) 17:00</li>
+						<li>· 수험표 출력 : 5/13(금) 10:00 </li>
+						<li>· 시험일: 5/22(일) </li>
+						<li>· 합격자 발표:6/13(월) 10:00</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">3과정</span></td>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">전공심화과정 인정시험</span></td>
+				<td colspan="1" rowspan="1">
+					<ul>
+						<li>. 온라인 원서접수: 7/1(금)10:00~7/8(금) 17:00</li>
+						<li>. 수험표 출력: 8/5(금) 10:00 </li>
+						<li>· 시험일: 8/14(일) </li>
+						<li>· 합격자 발표: 9/12(월)10:00</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">4과정</span></td>
+				<td colspan="1" rowspan="1"><span class="fcNavy fbold">학위취득 인정시험</span></td>
+				<td colspan="1" rowspan="1">
+					<ul>
+						<li>. 온라인 원서접수: 9/16(금) 10:00~9/23(금) 17:00 </li>
+						<li>· 수험표출력:10/21(금) 10:00 </li>
+						<li>· 시험일: 10/30(일) </li>
+						<li>. 합격자발표:11/28(월) 10:00</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="fullBox">
+		<div class="detailBox subject">
+			<h2 class="detailTit fl">전공</h2>
+			<p class="explan">
+				총 11가지 전공이 있지만 몇 가지 전공은 응시할 수 있는 자격이 다르기 때문에 시험을 보시기 전에 상담을 통해서 확인하는 것이 좋습니다.
+			</p>
+			<table>
+				<tbody>
+					<tr>
+						<td>국어국문학</td>
+						<td>영어영문학</td>
+						<td>심리학</td>
+						<td>경영학</td>
+						<td>법학</td>
+						<td>행정학</td>
+					</tr>
+					<tr>
+						<td>유아교육학</td>
+						<td>가정학</td>
+						<td>컴퓨터공학</td>
+						<td>정보통신학</td>
+						<td>간호학</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="fcLightblue fbold">※ 컴퓨터과학 전공은 2022년 부터 컴퓨터공학으로 명칭 변경</p>
+			<div class="fcWhite mt10 notice">
+				<p>유의사항</p>
+				<ul>
+					<li>·<span class="fbold"> 유아교육학 및 정보통신학 전공</span> : 전공심화과정 인정시험 및 학위취득 종합시험만 실시</li>
+					<li>·<span class="fbold"> 간호학 전공</span> : 학위취득 종합시험만 실시</li>
+					<li>·<span class="fbold"> 중어중문학. 수학. 농학 전공</span> : 폐지 전으로 기존에 해당전공 학적보유자에 한하여 응시 가능</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="detailBox passGuide">
+		<h2 class="detailTit fl">합격결정</h2>
+		<table>
+			<tr>
+				<th>1과정</th>
+				<td>기초 교양과정 <br/>(5과목 합격) 시험</td>
+				<th>2과정</th>
+				<td>기초 전공과정 <br/>(6과목 합격) 시험</td>
+				<th>3과정</th>
+				<td>심화 전공과정 <br/>(6과목 합격) 시험</td>
+				<th>4과정</th>
+				<td>학위 취득과정 <br/>(6과목 합격) 시험</td>
+			</tr>
+		</table>
+		<img class="mt10" src="../images/img_plan_d2.png">
+	</div>
+
+
+	<div class="footerDiv">
+		<div class="footMain">
+			<div class="logosDiv">
+				<img alt="" src="./images/logo-top_1.png">
+			</div>
+			<div class="textDivArea">
+				<h1>스마트플랜</h1>
+				<p>멘토링/학습 : 평일 (월-금) AM10:00 - PM10:00</p>
+				<p>교육 상담시간 : 점심시간 PM12:30 - PM13:30</p>
+				<p>전화번호 : 02-3395-0053</p>
+			</div>
+		</div>
+		<div class="footerB">
+			<div>
+				<p>(우:04781) 서울특별시 성동구 성수일로4길 25 서울숲코오롱디지털타워1차 20층</p>
+				<p>회사명 : 스마트플랜 | 대표이사 : 최민우 | 사업자등록번호 : 501-34-99597</p>
+				<p>Email : abwlr75314@nate.com | Tel : 070-7609-6378 | Fax :
+					0504-296-4384</p>
+			</div>
+		</div>
+	</div>
+	<div class="dim"></div>
+	<div class="requestDiv">
+		<button class="popEsc" onclick="fn_popEsc()"></button>
+		<div id="req01">
+			<span>Q 1/3</span>
+			<p class="requestTit">현재 졸업 상태는?</p>
+			<div class="requestList">
+				<div>
+					<input type="radio" id="grad01" name="contact" value="고등학교 졸업자">
+					<label for="grad01">고등학교 졸업자</label>
+				</div>
+				<div>
+					<input type="radio" id="grad02" name="contact" value="전문대 졸업자">
+					<label for="grad02">전문대 졸업자</label>
+				</div>
+				<div>
+					<input type="radio" id="grad03" name="contact" value="대학 졸업자">
+					<label for="grad03">4년제 대학 졸업자</label>
+				</div>
+				<div>
+					<input type="radio" id="grad04" name="contact" value="기타">
+					<label for="grad04">기타</label>
+				</div>
+			</div>
+		</div>
+		<div id="req02" style="display: none">
+			<span>Q 2/3</span>
+			<p class="requestTit">Q2. 관심있는 교육과정은 ?</p>
+			<div class="requestList">
+				<div>
+					<input type="radio" id="curriculum01" name="contact" value="2년제 학위">
+					<label for="curriculum01">2년제 학위</label>
+				</div>
+				<div>
+					<input type="radio" id="curriculum02" name="contact" value="4년제 학위">
+					<label for="curriculum02">4년제 학위</label>
+				</div>
+				<div>
+					<input type="radio" id="curriculum03" name="contact" value="편입">
+					<label for="curriculum03">편입</label>
+				</div>
+				<div>
+					<input type="radio" id="curriculum04" name="contact" value="사회복지사">
+					<label for="curriculum04">사회복지사</label>
+				</div>
+				<div>
+					<input type="radio" id="curriculum05" name="contact" value="보육교사">
+					<label for="curriculum05">보육교사</label>
+				</div>
+				<div>
+					<input type="radio" id="curriculum06" name="contact" value="국가기술자격증">
+					<label for="curriculum06">국가기술자격증</label>
+				</div>
+			</div>
+		</div>
+		<div id="req03" style="display: none">
+			<span>Q 3/3</span>
+			<p class="requestTit">Q2. 원하시는 교육과정 타입은 ?</p>
+			<div class="requestList">
+				<div>
+					<input type="radio" id="type01" name="contact" value="가장 저렴하게">
+					<label for="type01">가장 저렴하게</label>
+				</div>
+				<div>
+					<input type="radio" id="type02" name="contact" value="가장 쉽게">
+					<label for="type02">가장 쉽게</label>
+				</div>
+				<div>
+					<input type="radio" id="type03" name="contact" value="가장 빠르게">
+					<label for="type03">가장 빠르게</label>
+				</div>
+				<div>
+					<input type="radio" id="type04" name="contact" value="가장 확실하게">
+					<label for="type04">가장 확실하게</label>
+				</div>
+			</div>
+		</div>
+		<div id="req04" style="display: none">
+			<p class="requestTit">상담 신청서 작성하기</p>
+			<div class="requestList">
+				<p>이름</p>
+				<input type="text" class="requestIpt" id="rName">
+				<p>전화번호</p>
+				<input type="text" class="requestIpt" id="rPhone">
+				<p>카카오톡 ID</p>
+				<input type="text" class="requestIpt" id="rKakao">
+			</div>
+			<button class="btnReq" onclick="">상담 신청</button>
+		</div>
+		<button class="btnPrev fl" onclick="fn_reqPrev()" style="display: none">< 이전</button>
+		<button class="btnNext fr" onclick="fn_reqNext()">다음 ></button>
+	</div>
+</body>
+</html>
