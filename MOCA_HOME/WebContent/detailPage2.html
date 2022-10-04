@@ -9,9 +9,42 @@
 <script type="text/javascript">
 	//menu
 	$(function(){
-		manuHover();
-		sManuHover();
+		totalMenuHover();
+		//manuHover();
+		//sManuHover();
 	});
+	
+	function totalMenuHover(){
+	    $(".naviUl").mouseover(
+	    	function(e){
+	    		console.log("1",e);
+				var fNaviLi_li = $(e.srcElement).closest('LI');
+				var nth = fNaviLi_li.index();
+	    		if(fNaviLi_li != null && fNaviLi_li.hasClass('fNaviLi') || fNaviLi_li.hasClass('sNaviLi')){
+	    			$(".fNaviLi ul").css("display", "block");
+	    		}
+	    		$('LI').find('.mainA').removeClass('on');
+	    		if(fNaviLi_li != null && fNaviLi_li.hasClass('fNaviLi')){
+	    			fNaviLi_li.find('.mainA').addClass('on');
+	    			$('LI').css("background-color", "");
+	    		}else if(fNaviLi_li != null && fNaviLi_li.hasClass('sNaviLi')){
+	    			$('LI').css("background-color", "");
+	    			var parent_fNaviLi_li = fNaviLi_li.parent().closest('LI');
+	    			parent_fNaviLi_li.find('.mainA').addClass('on');
+	    			fNaviLi_li.css("background-color", "var(--navy_70)");
+	    		}
+	    		
+	    	}
+	    );
+	    $(".naviUl").mouseout(
+		    	function(e){
+		    		console.log("222",e);
+		    		$(".fNaviLi ul").css("display", "none");
+		    		$('LI').find('.mainA').removeClass('on');
+		    	}
+		);
+	}
+	
 	function manuHover(){
 	    $(".naviUl").hover(function(){
 	    	$(".fNaviLi ul").slideDown(300);
@@ -103,10 +136,6 @@
 </head>
 <body class="pageBody">
 	<div class="header">
-		<div class="l"></div>
-		<a href="./index.html" style="display: contents;">
-			<img class="logoImg" alt="" src="./images/logo-top_1.png">
-		</a>
 		<div class="mBtn" id="headerBtn">
 			<a href="javascript:fn_openLogin();">로그인</a> <a
 				href="javascript:fn_openReg();" class="cBtn">회원가입</a> <a
@@ -121,6 +150,9 @@
 		<span class="top-btn__arrow"></span> <span class="top-btn__txt">맨 위로 이동</span>
 	</div>
 	<div class="navi">
+		<a href="./index.html" style="display: contents;">
+			<img class="logoImg" alt="" src="./images/logo-top_1.png">
+		</a>
 		<ul class="naviUl">
 			<li class="fNaviLi">
 				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드소개</a>
@@ -132,7 +164,7 @@
 				<a href="https://abwlr75314.cafe24.com/php/detailPage1.php" class="mainA">국내교육</a>
 				<ul style="display: none;">
 					<li class="sNaviLi"><a href="./detailPage1.html">학점은행제</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage2.php">독학학위제</a></li>
+					<li class="sNaviLi"><a href="./detailPage2.html">독학학위제</a></li>
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage3.php">편입/대학원</a></li>
 				</ul>
 			</li>
