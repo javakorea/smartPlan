@@ -12,23 +12,43 @@
 		manuHover();
 		sManuHover();
 	});
+	var openFlag = false;
 	function manuHover(){
-	    $(".naviUl").hover(function(){
-	    	$(".fNaviLi ul").slideDown(300);
-	    },function(){
-	    	$(".fNaviLi ul").css("display", "none");;
-	    });
+	    $(".fNaviLi").hover(
+	    	function(e){
+	    		//$(this).find('.mainA').addClass('on');	  
+		    	$(".fNaviLi ul").slideDown(300);
+		    	openFlag = true;
+	    	},
+	    	function(e){
+	    		setTimeout(function(){
+		    		//$(this).find('.mainA').removeClass('on');
+		    		if(!openFlag){
+		    			$(".fNaviLi ul").css("display", "none");
+		    		}
+		    		openFlag = false;
+	    		},200);
+	    	}
+	    );
 	}
 	function sManuHover(){
-		$(".sNaviLi").hover(function(){
-	    	$(this).css("background-color", "white");
-	    	$(this).find("a").css("color", "#343434");
-	    },function(){
-	    	$(this).css("background-color", "#343434");
-	    	$(this).find("a").css("color", "white");
-	    });
+		
+		$(".sNaviLi").hover(
+			//hover시수행	
+			function(e){
+		    	$(this).css("background-color", "var(--navy_70)");
+		    	$(this).closest('ul').prev().addClass('on');
+		    	return false;
+		    },
+		  	//unhover시수행	
+		    function(e){
+		    	debugger;
+		    	$(this).css("background-color", "");
+		    	$(this).closest('ul').prev().removeClass('on');
+		    	return false;
+		    }
+	    );
 	}
-
  	//scrollTop
 	function fn_scrollTop(){
 		$('html,body').animate({
@@ -103,10 +123,6 @@
 </head>
 <body class="pageBody">
 	<div class="header">
-		<div class="l"></div>
-		<a href="./index.html" style="display: contents;">
-			<img class="logoImg" alt="" src="./images/logo-top_1.png">
-		</a>
 		<div class="mBtn" id="headerBtn">
 			<a href="javascript:fn_openLogin();">로그인</a> <a
 				href="javascript:fn_openReg();" class="cBtn">회원가입</a> <a
@@ -121,15 +137,37 @@
 		<span class="top-btn__arrow"></span> <span class="top-btn__txt">맨 위로 이동</span>
 	</div>
 	<div class="navi">
+		<a href="./index.html" style="display: contents;">
+			<img class="logoImg" alt="" src="./images/logo-top_1.png">
+		</a>
 		<ul class="naviUl">
 			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드 소개</a>
-				<ul style="display: none;">
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드 소개</a></li>
-				</ul>
+				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드소개</a>
 			</li>
 			<li class="fNaviLi">
 				<a href="https://abwlr75314.cafe24.com/php/detailPage1.php" class="mainA">국내교육</a>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage4.php" class="mainA">자격증</a>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage7.php" class="mainA">해외교육</a>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">고객센터</a>
+			</li>
+		</ul>
+		
+		
+		
+		
+		<ul class="naviUl" style='position:absolute;top:54px;left:130px'>
+			<li class="fNaviLi">
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드소개</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
 				<ul style="display: none;">
 					<li class="sNaviLi"><a href="./detailPage1.html">학점은행제</a></li>
 					<li class="sNaviLi"><a href="./detailPage2.html">독학학위제</a></li>
@@ -137,7 +175,6 @@
 				</ul>
 			</li>
 			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/detailPage4.php" class="mainA">자격증</a>
 				<ul style="display: none;">
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage4.php">기사/산업기사</a></li>
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage5.php">사회복지사</a></li>
@@ -145,7 +182,6 @@
 				</ul>
 			</li>
 			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/detailPage7.php" class="mainA">해외교육</a>
 				<ul style="display: none;">
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage7.php">파운데이션</a></li>
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage8.php">ICL학위과정정</a></li>
@@ -153,7 +189,6 @@
 				</ul>
 			</li>
 			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">고객센터</a>
 				<ul style="display: none;">
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">공지사항</a></li>
 					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounseling.php">상담신청</a></li>
@@ -161,6 +196,7 @@
 				</ul>
 			</li>
 		</ul>
+		
 	</div>
 	<div class="sideBar" onclick="requestService();">
 		<span class="ico_write"></span>
@@ -448,17 +484,16 @@
 			</div>
 			<div class="textDivArea">
 				<h1>스마트플랜</h1>
-				<p>멘토링/학습 : 평일 (월-금) AM10:00 - PM10:00</p>
-				<p>교육 상담시간 : 점심시간 PM12:30 - PM13:30</p>
-				<p>전화번호 : 02-3395-0053</p>
+				<div class="time">
+					<p>멘토링/학습 : 평일 (월-금) AM10:00 - PM10:00</p>
+					<p>교육 상담시간 : 점심시간 PM12:30 - PM13:30</p>
+					<p>전화번호 : 02-3395-0053</p>
+				</div>
 			</div>
-		</div>
-		<div class="footerB">
-			<div>
+			<div class="textDivArea location">
 				<p>(우:04781) 서울특별시 성동구 성수일로4길 25 서울숲코오롱디지털타워1차 20층</p>
 				<p>회사명 : 스마트플랜 | 대표이사 : 최민우 | 사업자등록번호 : 501-34-99597</p>
-				<p>Email : abwlr75314@nate.com | Tel : 070-7609-6378 | Fax :
-					0504-296-4384</p>
+				<p>Email : abwlr75314@nate.com | Tel : 070-7609-6378 | Fax : 0504-296-4384</p>
 			</div>
 		</div>
 	</div>

@@ -21,11 +21,11 @@
 	}
 	function sManuHover(){
 		$(".sNaviLi").hover(function(){
-	    	$(this).css("background-color", "white");
-	    	$(this).find("a").css("color", "#343434");
+	    	$(this).css("background-color", "var(--navy_70)");
+	    	$(this).closest('ul').prev().addClass('on');
 	    },function(){
-	    	$(this).css("background-color", "#343434");
-	    	$(this).find("a").css("color", "white");
+	    	$(this).css("background-color", "");
+	    	$(this).closest('ul').prev().removeClass('on');
 	    });
 	}
 
@@ -123,9 +123,9 @@
 	<div class="navi">
 		<ul class="naviUl">
 			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드 소개</a>
+				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드소개</a>
 				<ul style="display: none;">
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드 소개</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드소개</a></li>
 				</ul>
 			</li>
 			<li class="fNaviLi">
@@ -314,17 +314,16 @@
 			</div>
 			<div class="textDivArea">
 				<h1>스마트플랜</h1>
-				<p>멘토링/학습 : 평일 (월-금) AM10:00 - PM10:00</p>
-				<p>교육 상담시간 : 점심시간 PM12:30 - PM13:30</p>
-				<p>전화번호 : 02-3395-0053</p>
+				<div class="time">
+					<p>멘토링/학습 : 평일 (월-금) AM10:00 - PM10:00</p>
+					<p>교육 상담시간 : 점심시간 PM12:30 - PM13:30</p>
+					<p>전화번호 : 02-3395-0053</p>
+				</div>
 			</div>
-		</div>
-		<div class="footerB">
-			<div>
+			<div class="textDivArea location">
 				<p>(우:04781) 서울특별시 성동구 성수일로4길 25 서울숲코오롱디지털타워1차 20층</p>
 				<p>회사명 : 스마트플랜 | 대표이사 : 최민우 | 사업자등록번호 : 501-34-99597</p>
-				<p>Email : abwlr75314@nate.com | Tel : 070-7609-6378 | Fax :
-					0504-296-4384</p>
+				<p>Email : abwlr75314@nate.com | Tel : 070-7609-6378 | Fax : 0504-296-4384</p>
 			</div>
 		</div>
 	</div>

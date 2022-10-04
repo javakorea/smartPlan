@@ -22,6 +22,12 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
   --navy_70:rgba(18,56,103,0.7);
   --navy_50:rgba(18,56,103,0.5);
   --navy_30:rgba(18,56,103,0.3);
+  
+  --navy_60:rgba(18,56,103,0.6);  
+  --navy_40:rgba(18,56,103,0.4);  
+  --navy_20:rgba(18,56,103,0.2);
+  --navy_10:rgba(18,56,103,0.1);
+  
 }
 .p10{padding-left:10px}
 .pl10{padding-left:10px}
@@ -302,36 +308,43 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 }
 /* 상단 로그 및 헤더 */
 .header{
+	overflow:hidden;
+	padding: 10px 37px 0 6px;
 	width: 1200px;
 	margin: 0 auto;
-	display: inline-flex;
 }
 .l{
 	width: 300px;
 }
 .logoImg{
-	margin: 20px auto;
+    float: left;
+    position: relative;
+    top: -31px;
+    padding:5px 0;
 }
 .mBtn{
-	line-height:110px;
-	width: 300px;
 	font-size: 13px;
+	float:right;
+	height:24px;
 }
 .mBtn a{
-	padding: 0 5px;
+	padding: 2px 7px;
+	width: 60px;
+    display: inline-block;
+    border: 1px solid var(--navy_30);
+    border-radius: 20px;
+    color: var(--navy_70);
 }
 .cBtn{
-	border-left: 1px solid #e3e3e3;
-	border-right: 1px solid #e3e3e3;
+	border-left: 1px solid var(--navy_50);
+	border-right: 1px solid var(--navy_50);
 }
 
 /* 상단 네비게이션 바 */
 .navi{
-	width: 100%;
-	height: 50px;
+	width: 1200px;
+	height: 60px;
 	margin: 0 auto;
-	border-bottom: 1px solid #e3e3e3;
-	border-top: 1px solid #e3e3e3;
 	position: relative;
     z-index: 10;
 }
@@ -340,20 +353,54 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	margin: 0 auto;
 }
 .fNaviLi{
-	width: 20%;
-	height: 50px;
+	width: calc((100% - 138px)/5);
+	height: 54px;
 	display: inline-block;
-	line-height: 50px;
+	line-height: 60px;
+	padding-top:6px;
 	float: left;
+	position:relative;
+	cursor:pointer;
+}
+.fNaviLi:before{
+	content:'';
+	display:inline-block;
+	width:2px;
+	height:15px;
+	background:var(--navy_30);
+	position:absolute;
+	right:0;
+	top:32px;
 }
 .mainA{
 	width: 100%;
 	height: 100%;
 	display: block;
+	
+}
+.naviUl .fNaviLi:nth-child(1) > a{
+	box-shadow: inset 0 5px 0 var(--navy_20);
+}
+.naviUl .fNaviLi:nth-child(2) > a{
+	box-shadow: inset 0 5px 0 var(--navy_30);
+}
+.naviUl .fNaviLi:nth-child(3) > a{
+	box-shadow: inset 0 5px 0 var(--navy_40);
+}
+.naviUl .fNaviLi:nth-child(4) > a{
+	box-shadow: inset 0 5px 0 var(--navy_30);
+}
+.naviUl .fNaviLi:nth-child(5) > a{
+	box-shadow: inset 0 5px 0 var(--navy_20);
+}
+.mainA.on{
+	color: var(--blue);
+    font-weight: bold;
+    box-shadow: inset 0 5px 0 var(--navy_70) !important;
 }
 .fNaviLi ul{
 	width: 100%;
-	background-color: #343434;
+	background-color:var(--navy_70);
 	display: none;
 	height:120px;
 }
@@ -361,9 +408,12 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	width: 100%;
 	height: 40px;
 	line-height: 40px;
+	text-align:center;
 }
 .sNaviLi a{
 	color: white;
+	width: 100%;
+    display: block;
 }
 
 /* 슬라이드 */
@@ -538,10 +588,13 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 .footMain{
 	width: 1200px;
 	display: inline-flex;
+	padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
 }
 .logosDiv{
 	padding: 10px;
-	width: 50%;
+	width: 130px;
 }
 .textDivArea{
 	padding: 10px;
@@ -550,10 +603,19 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	text-align: left;
 	color: #d7d7d7;
 }
+.textDivArea .time{
+	border-right: 1px solid #d7d7d7;
+    padding-right: 10px;
+}
+
 .textDivArea P{
 	text-align: left;
 	color: #d7d7d7;
 	font-size: 12px;
+}
+.textDivArea.location{
+	margin-top:34px;
+	padding-left:0;
 }
 .footerB{
 	width: 1200px;
@@ -774,8 +836,12 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	box-shadow: rgba(0,0,0,0.5) 2px 2px;
 	top:10%;
 	margin-left:calc((100% - 370px)/2);
-	padding:20px;
+	padding-top:20px;
 	z-index:999;
+}
+
+.requestArea{
+	padding:0 20px;
 }
 
 .requestDiv span{
@@ -788,7 +854,6 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 .requestTit{
 	font-weight: bold;
     font-size: 20px;
-    width: 290x;
     margin: 20px auto;
 }
 
@@ -814,8 +879,9 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	border-radius:5px;
 }
 
-.requestList [type=radio]:checked + label{
-	background:#cbe0e5;
+.requestList input[type=radio]:checked + label{
+	background:var(--navy_50);
+	color:#fff;
 }
 
 .requestList input[type=radio] + label:before{
@@ -830,16 +896,37 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	top:6px;
 }
 
-.requestList [type=radio]:checked + label:before{
+.requestList input[type=radio]:checked + label:before{
 	background-position: 0 0;
 	
+}
+
+.requestDiv .btnArea{
+	margin-top: 20px;
+    background: var(--navy_30);
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    position:relative;
 }
 
 .requestDiv .btnNext, .requestDiv .btnPrev{
 	font-size: 16px;
     font-weight: bold;
-    color: #000;
-    margin-top: 20px;
+    color: #fff;
+    width: 50%;
+    padding: 20px 0;
+    cursor: pointer;
+    
+}
+
+.requestDiv .bar{
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
 }
 
 .requestList > p {
@@ -865,7 +952,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
     text-align: center;
     padding: 12px;
     box-sizing: border-box;
-    background: var(--skyblue);
+    background: var(--navy_70);
     border-radius: 5px;
     color: #fff;
     font-size: 20px;
