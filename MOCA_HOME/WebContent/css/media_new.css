@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@media ( max-width: 1279px ) {
+	.loadMapImg {width: 100%;}
+	    
+}
+@media (max-width: 978px) {
+	.top-btn{display:none}
+	.sideBar{top:60%;}
+	.processTitleBox{width:100%; top:unset}
+	.processFullArea{padding:30px; height:auto}
+	.prcessTitle{float: left;width: 32%;background-size: 100%;top: 130px;}
+	.processBg{display:none;/*top: -150px; width: 25%; background-size: 100%;height: 100%;*/}
+	.processBoxDiv{left: 0; top:unset}
+	.processTit1{float:left; font-size: 5vh;}
+	.processTit2{font-size: 5vh; float: left; margin-left: 10px; line-height: unset;}
+	
+	.processTitleBox > div{display: inline-block; position: relative; top: 0px;margin-bottom:20px;}
+}
+
+@media (max-width: 700px) {
+	.processFullArea{padding:30px;height: 100%;}
+	.processBox{width: 100%; background-size: 100%; height: 50%;}
+	.processBox h4{margin-bottom:10px;}
+	.processBoxDiv .btn_arrowR{position:relative !important; width: 80%; margin: 0 auto; position: relative;top: 0; bottom:0; background-image:unset}
+	.processBoxDiv > .fl{float: unset;margin-bottom: 21px}
+	.processBoxDiv > .fl:last-child{margin-bottom:0}
+	.processBoxDiv{width:100%;}
+	.footMain{flex-direction: column;}
+	.logosDiv{padding:10px 0;}
+	.textDivArea .time{border-right:0}
+	.sideBar{display:none}
+	.textDivArea{padding:0}
+	.textDivArea.location{margin-top:10px}
+
+}

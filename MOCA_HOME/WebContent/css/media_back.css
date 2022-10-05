@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+@media ( max-width: 800px ) {
+	.mBtn{display: none;}
+	.navi{display: none;}
+	.sideBar{display: none;}
+	.logoImg{
+		max-height: 40px;
+	}
+	/* 모바일 슬라이드 (모바일) */
+	.mainSlide{
+		width: 100%;
+	}
+	.mainSlideDiv{
+		margin: 0 auto;
+		overflow: hidden;
+		width: 100%;
+	}
+	.mainSlideUl{
+		width: 100%;
+	}
+	.mainSlideLi{
+		width: 100%;
+	}
+	.mainSlideLi:not(:first-child){
+		position: absolute;
+		opacity : 0;
+	}
+	.mainSlideImg{
+		width: 100%;
+	}
+	
+	/* 중간 라인 (모바일) */
+	.CheckLine{
+		display: block;
+		width: 100%;
+		height: 30px;
+		background-color: #4a414a;
+	}
+	
+	/* 로드맵 (모바일) */
+	.loadMapImgDiv{
+		width: 100%;
+		padding : 40px 0;
+	}
+	
+	.loadMapImg{
+		width: 100%;
+	}
+	
+	/* 메인 과정 (모바일) */
+	.processDiv{
+		width: 100%;
+		padding : 50px 0;
+		background-color: #f7f5f7;
+	}
+	.processUl{
+		margin: 0 auto;
+	}
+	.processLi{
+		display: inline-block;
+		width: 250px;
+		margin: 0 25px;
+	}
+	.processImg{
+		width: 100%;
+	}
+	
+	/* 상담신청 (모바일) */
+	.requestTestDiv{
+		width: 100%;
+		height: 800px;
+		line-height: 800px;
+		padding : 25px 0;
+	}
+	.requestTestDiv button{
+		width: 100%;
+	    height: 100px;
+	    font-size: 30px;
+	    font-weight: 600;
+	    border: 2px solid #d76bff;
+	    border-radius: 15px;
+	    background-color: black;
+	    color: white;
+	}
+	.requestTestTableDiv{
+		width: 100%;
+		min-width : 1200px;
+		padding : 25px 0;
+		position: absolute;
+		display: none;
+	}
+	.requestTestTableDiv button{
+		width: 200px;
+	    height: 50px;
+	    font-size: 20px;
+	    font-weight: 600;
+	    border: 2px solid #d76bff;
+	    border-radius: 15px;
+	    background-color: black;
+	    color: white;
+	}
+	
+	.requestTestTable{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.requestTestTable td{
+		border: 1px solid black;
+	}
+	.requestTestTable img{
+		width: 200px;
+	}
+	.requestTestTable input[type="radio"]{
+		width: 100%;
+		font-size: 10px;
+	}
+	.requestTestFormTable{
+		width: 800px;
+	    margin: 0 auto;
+	    font-size: 20px;
+	    font-weight: 600;
+	    border-spacing: 0px;
+	    border-style: none;
+	    padding: 0px;
+	    border: 1px solid black;
+	}
+	.requestTestFormTable tr{
+		height: 50px;
+	}
+	.requestTestFormTable td{
+		
+		border: 1px solid black;
+	}
+	.requestTestFormTable input{
+	    height: 50px;
+	    font-size: 25px
+	}
+	
+	/* 지도 (모바일) */
+	.mapInfoDiv{
+		width: 100%;
+		padding : 50px 0;
+		background-image: url("../images/mapBG.jpg");
+	}
+	.mapInfoImg{
+		width: 100%;
+	}
+	.mapInfoTable{
+		background-color: #7c7c7c;
+		width: 100%;
+		margin: 0 auto;
+		color: white;
+		border-spacing: 0px;
+	    border-style: none;
+	    padding: 0px;
+	}
+	.mapInfoTable tr{
+		height: 40px;
+	}
+	.mapInfoTable tr td{
+		border: 2px solid white;
+	}
+	
+	/* 풋터 (모바일) */
+	.footerDiv{
+		width: 100%;
+		background-color: #171c2a;
+	}
+	.footMain{
+		width: 100%;
+		display: inline-flex;
+	}
+	.logosDiv{
+		padding: 10px;
+		width: 50%;
+	}
+	.textDivArea{
+		padding: 10px;
+	}
+	.textDivArea h1{
+		text-align: left;
+		color: #d7d7d7;
+	}
+	.textDivArea P{
+		text-align: left;
+		color: #d7d7d7;
+		font-size: 10px;
+	}
+	.footerB{
+		width: 100%;
+		display: inline-flex;
+	}
+	.footerB div{
+		padding: 10px;
+		margin: 0 auto;
+	}
+	.footerB div p{
+		text-align: center;
+		color: #d7d7d7;
+		font-size: 10px;
+	}
+	
+	
+	/* 상세 페이지 */
+	.locationArea{
+		width: 100%;
+		background-image: url(../images/BG/pageBG1.jpg);
+		padding: 20px 0;
+	}
+	
+	.locationArea h1{
+		color: white;
+		font-size: 20px;
+	}
+	
+	.locationArea p{
+		font-size: 10px;
+	    margin-top: 10px;
+	    font-weight: 600;
+	    color: white;
+	}
+	.detailImg{
+		width: 100%;
+	}
+	.fP{
+		border-left: 3px solid #b892f5;
+	}
+	.textArea{
+		margin : 30px auto;
+		width: 100%;
+	}
+	.textArea h2{
+		font-size: 20px;
+	    font-weight: 700;
+	    margin: 20px 0;
+	}
+	.textArea p{
+		font-size: 10px;
+	    line-height: 20px;
+	}
+	
+	
+	/*teammoca 추가*/
+	
+	.top-btn{display:none}
+	.processBoxDiv{left:0}
+}

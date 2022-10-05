@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스마트플랜</title>
+<link rel="stylesheet" type="text/css" href="../css/common2.css">
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+
+function reSize(){
+	 var objBody = ifrm.document.body;
+	 var objFrame = document.all["ifrm"];
+
+	 objFrame.style.height = objBody.scrollHeight + (objBody.offsetHeight - objBody.clientHeight);
+	 objFrame.style.width = '100%';
+	}
+	//menu
+	$(function(){
+		totalMenuHover();
+		//manuHover();
+		//sManuHover();
+	});
+	function totalMenuHover(){
+	    $(".naviUl").mouseover(
+	    	function(e){
+	    		console.log("1",e);
+				var fNaviLi_li = $(e.srcElement).closest('LI');
+				var nth = fNaviLi_li.index();
+	    		if(fNaviLi_li != null && fNaviLi_li.hasClass('fNaviLi') || fNaviLi_li.hasClass('sNaviLi')){
+	    			$(".fNaviLi ul").css("display", "block");
+	    		}
+	    		$('LI').find('.mainA').removeClass('on');
+	    		if(fNaviLi_li != null && fNaviLi_li.hasClass('fNaviLi')){
+	    			fNaviLi_li.find('.mainA').addClass('on');
+	    			$('LI').css("background-color", "");
+	    		}else if(fNaviLi_li != null && fNaviLi_li.hasClass('sNaviLi')){
+	    			$('LI').css("background-color", "");
+	    			var parent_fNaviLi_li = fNaviLi_li.parent().closest('LI');
+	    			parent_fNaviLi_li.find('.mainA').addClass('on');
+	    			fNaviLi_li.css("background-color", "var(--navy_70)");
+	    		}
+	    		
+	    	}
+	    );
+	    $(".naviUl").mouseout(
+		    	function(e){
+		    		console.log("222",e);
+		    		$(".fNaviLi ul").css("display", "none");
+		    		$('LI').find('.mainA').removeClass('on');
+		    	}
+		);
+	}	
+	function manuHover(){
+	    $(".naviUl").hover(function(){
+	    	$(".fNaviLi ul").slideDown(300);
+	    },function(){
+	    	$(".fNaviLi ul").css("display", "none");;
+	    });
+	}
+	function sManuHover(){
+		$(".sNaviLi").hover(function(){
+	    	$(this).css("background-color", "var(--navy_70)");
+	    	$(this).closest('ul').prev().addClass('on');
+	    },function(){
+	    	$(this).css("background-color", "");
+	    	$(this).closest('ul').prev().removeClass('on');
+	    });
+	}
+
+ 	//scrollTop
+	function fn_scroll(divClass){
+		$('html,body').animate({
+	    	scrollTop: 
+	        	$("."+divClass).offset().top},
+	        	'slow'
+	    	);
+	}
+	function fn_scrollTop(){
+		$('html,body').animate({
+			scrollTop:'0'},
+	    	'slow'
+		);
+	}
+	
+	//상담문의
+	function requestService(){
+		if($('.dim').is(':visible')){
+			$('.dim').hide();
+			$('.pageBody').removeClass('pageLock');
+			$('.requestDiv').hide();
+		}else{
+			$('.dim').show();
+			$('.pageBody').addClass('pageLock');
+			$('.requestDiv').show();
+		}
+	};
+	
+	function fn_reqNext(){
+		if($('#req01').is(':visible')){
+			if($('#req01 input[type="radio"]').is(':checked')){
+				$('#req01').hide();
+				$('#req02').show();
+				$('.btnPrev').show();
+			}else{
+				alert('선택해주세요');
+			}
+		}else if($('#req02').is(':visible')){
+			if($('#req02 input[type="radio"]').is(':checked')){
+				$('#req02').hide();
+				$('#req03').show();
+			}else{
+				alert('선택해주세요');
+			}
+		}else if($('#req03').is(':visible')){
+			if($('#req03 input[type="radio"]').is(':checked')){
+				$('#req03').hide();
+				$('#req04').show();
+				$('.btnNext').hide();
+			}else{
+				alert('선택해주세요');
+			}
+		}
+	};
+	
+	function fn_reqPrev(){
+		if($('#req02').is(':visible')){
+			$('#req02').hide();
+			$('#req01').show();
+			$('.btnPrev').hide();
+			$('.btnNext').show();
+		}else if($('#req03').is(':visible')){
+			$('#req03').hide();
+			$('#req02').show();
+			$('.btnNext').show();
+		}else if($('#req04').is(':visible')){
+			$('#req04').hide();
+			$('#req03').show();
+			$('.btnNext').show();
+		}
+	};
+	
+	function fn_popEsc(){
+		$('.dim').hide();
+		$('.requestDiv').hide();
+		$('.pageBody').removeClass('pageLock');
+	}
+</script>
+</head>
+<body class="pageBody">
+	<div class="header">
+		<div class="mBtn" id="headerBtn">
+			<a href="javascript:fn_openLogin();">로그인</a> <a
+				href="javascript:fn_openReg();" class="cBtn">회원가입</a> <a
+				href="javascript:fn_openCoun();">상담신청</a>
+		</div>
+		<div class="mBtn" id="afterBtn" style="display: none;">
+			<a href="https://abwlr75314.cafe24.com/php/index">마이페이지</a> <a
+				href="https://abwlr75314.cafe24.com/php/index">상담신청</a>
+		</div>
+	</div>
+	<div class="top-btn" onclick="fn_scrollTop()">
+		<span class="top-btn__arrow"></span> <span class="top-btn__txt">맨 위로 이동</span>
+	</div>
+	<div class="navi">
+		<a href="./index.html" style="display: contents;">
+			<img class="logoImg" alt="" src="./images/logo-top_1.png">
+		</a>
+		<ul class="naviUl">
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드소개</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드소개</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage1.php" class="mainA">국내교육</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="./detailPage1.html">학점은행제</a></li>
+					<li class="sNaviLi"><a href="./detailPage2.html">독학학위제</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage3.php">편입/대학원</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage4.php" class="mainA">자격증</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage4.php">기사/산업기사</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage5.php">사회복지사</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage6.php">보육교사</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/detailPage7.php" class="mainA">해외교육</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage7.php">파운데이션</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage8.php">ICL학위과정정</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage9.php">ICNA고등학교과정</a></li>
+				</ul>
+			</li>
+			<li class="fNaviLi">
+				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">고객센터</a>
+				<ul style="display: none;">
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">공지사항</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounseling.php">상담신청</a></li>
+					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounselingList.php">신청내역</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

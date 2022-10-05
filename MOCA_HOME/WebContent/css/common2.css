@@ -8,7 +8,7 @@ th, tr, td{ padding: 0; }
 .left{text-align: left;}
 .center{text-align: center;}
 body {position:relative; font-family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋움',dotum,sans-serif; font-size:13px; color:#555}
-select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋움',dotum,sans-serif; color:#555; background:none}
+select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋움',dotum,sans-serif; color:#555; background:none}
 
 
 :root {
@@ -77,7 +77,6 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 }
 
 /* PC */
-@media ( min-width: 801px ) {
 	
 /* 로그인 & 회원가입 */
 .popup{
@@ -307,20 +306,24 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
     filter: invert(100%);
 }
 /* 상단 로그 및 헤더 */
+.headerArea{
+	max-width:1200px;
+	margin:0 auto;
+	padding: 0 30px;
+}
 .header{
 	overflow:hidden;
 	padding: 10px 37px 0 6px;
-	width: 1200px;
 	margin: 0 auto;
 }
 .l{
 	width: 300px;
 }
 .logoImg{
-    float: left;
-    position: relative;
+    position: absolute;
     top: -31px;
-    padding:5px 0;
+    padding: 5px 0;
+    left: 0;
 }
 .mBtn{
 	font-size: 13px;
@@ -342,15 +345,16 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 
 /* 상단 네비게이션 바 */
 .navi{
-	width: 1200px;
 	height: 60px;
 	margin: 0 auto;
 	position: relative;
     z-index: 10;
+    overflow-x: clip;
 }
-.navi ul{
-	width: 1200px;
+.navi > ul{
 	margin: 0 auto;
+	position:relative;
+	left:130px;
 }
 .fNaviLi{
 	width: calc((100% - 138px)/5);
@@ -419,23 +423,24 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 /* 슬라이드 */
 .mainSlide{
 	width: 100%;
-	height:300px;
-	min-width : 1200px;
+	/*height:400px;*/
 	position:relative;
 }
 .mainSlideDiv{
+	/*
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
 	position: absolute;
     top: 0;
+    */
 }
 .mainSlideUl{
 	width: 100%;
 }
 .mainSlideLi{
 	width: 100%;
-	min-width : 1200px;
+	
 }
 .mainSlideLi:not(:first-child){
 	position: absolute;
@@ -443,19 +448,19 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 }
 .mainSlideImg{
 	width: 100%;
-	min-width : 1200px;
+	
 }
 .mainSlideImg2{
-	background:url(../images/001.jpg);
+	background:url(../images/001.jpg) center center;
 	width: 100%;
-	min-width : 1200px;
-	height:300px;
+	
+	height:400px;
 }
 /* 중간 라인 */
 .CheckLine{
 	display: block;
 	width: 100%;
-	min-width : 1200px;
+	
 	height: 30px;
 	background-color: #4a414a;
 }
@@ -464,7 +469,6 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 .loadMapImgDiv{
 	width: 100%;
 	padding : 0;
-	min-width: 1200px;
 }
 
 .loadMapImg{
@@ -473,12 +477,11 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 /* 메인 과정 */
 .processDiv{
 	width: 100%;
-	min-width : 1200px;
+	
 	padding : 50px 0;
 	background-color: #fff;
 }
 .processUl{
-	width: 1200px;
 	margin: 0 auto;
 }
 .processLi{
@@ -493,7 +496,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 /* 상담신청 */
 .requestTestDiv{
 	width: 100%;
-	min-width : 1200px;
+	
 	height: 800px;
 	line-height: 800px;
 	padding : 25px 0;
@@ -510,7 +513,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 }
 .requestTestTableDiv{
 	width: 100%;
-	min-width : 1200px;
+	
 	padding : 25px 0;
 	position: absolute;
 	display: none;
@@ -527,7 +530,6 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 }
 
 .requestTestTable{
-	width: 1200px;
 	margin: 0 auto;
 }
 .requestTestTable td{
@@ -564,7 +566,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 /* 지도 */
 .mapInfoDiv{
 	width: 100%;
-	min-width : 1200px;
+	
 	padding : 50px 0;
 	background-image: url("../images/mapBG.jpg");
 }
@@ -591,11 +593,10 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 /* 풋터 */
 .footerDiv{
 	width: 100%;
-	min-width : 1200px;
+	
 	background-color: #171c2a;
 }
 .footMain{
-	width: 1200px;
 	display: inline-flex;
 	padding: 20px;
     box-sizing: border-box;
@@ -627,7 +628,6 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	padding-left:0;
 }
 .footerB{
-	width: 1200px;
 	display: inline-flex;
 }
 .footerB div{
@@ -643,7 +643,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 /* 상세 페이지 */
 .locationArea{
 	width: 100%;
-	min-width : 1200px;
+	
 	background-image: url(../images/BG/pageBG1.jpg);
 	padding: 100px 0;
 }
@@ -662,7 +662,7 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 }
 .detailImg{
 	width: 100%;
-	min-width : 1200px;
+	
 }
 .fP{
 	width: 400px;
@@ -670,9 +670,8 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	border-right: 3px solid #b892f5;
 }
 .textArea{
-	width: 1200px;
 	margin : 100px auto;
-	min-width : 1200px;
+	
 }
 .textArea h2{
 	font-size: 30px;
@@ -713,16 +712,9 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	margin-top: 20px;
 }
 
-
-
-
-	
-	
-}
-
 /*teammoca*/
 /*추가*/
-.processArea{
+.processFullArea{
 	height:400px;
 	background:#674ee7;
 	position:relative;
@@ -730,38 +722,48 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 
 .processBg{
 	background: url(../images/ico/img_cap.png) center center no-repeat;
-	width: 300px;
-	height:300px;
-	position:absolute;
-	left: 20px;
-    top: -250px;
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+}
+.processTitleBox{
+	width: 325px;
+    display: inline-block;
+    position: relative;
+    top: -155px;
+}
+.processTit1{
+	font-size: 65px;
+    font-weight: bold;
+    letter-spacing: -4.5px;
+    color:#fff;
+}
+.processTit2{
+	font-size: 45px;
+    font-weight: bold;
+    letter-spacing: -4.5px;
+    color:#fff;
+    line-height:1;
 }
 
 .processBoxDiv{
 	display: inline-block;
-    top: 70px;
+    top: -95px;
     position: relative;
     left: 45px;
-}
-
-.prcessTitle{
-	width:315px;
-	height:216px;
-	display:inline-block;
-	position:relative;
-	top:40px;
-	background: url(../images/ico/img_processTitle.png) center center no-repeat;
 }
 .processBox{
 	background: url(../images/ico/img_processBox.png) top center no-repeat;
 	width:194px;
-	height:272px;
-	margin-right:20px;
+	height:230px;
+	
 	padding: 25px;
     box-sizing: border-box;
     position:relative;
 }
-
+.processBoxDiv .fl:last-child .processBox{
+	margin-right:0;
+}
 .processBox h4{
 	text-align: left;
     font-size: 20px;
@@ -771,19 +773,21 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	line-height:1.5;
 	border-bottom:1px dashed #674ee7;
 }
-
-.processBox .btn_arrowR{
+.processBoxDiv > div{
+	display: flex;
+    flex-direction: column;
+    margin-right:20px;
+}
+.processBoxDiv .btn_arrowR{
 	width: 170px;
     height: 38px;
     background-color: #543cd0;
     background-image: url(../images/ico/ico_arrowR.png);
     background-position: 30px 5px;
     color: #fff;
-    position: absolute;
-    bottom: 4px;
-    left: 12px;
     background-repeat: no-repeat;
     text-indent: 29px;
+    margin:0 auto;
 }
 
     
@@ -979,20 +983,18 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
     margin-bottom: 10px;
     font-size: 30px;
     text-align: left;
-    max-width: 1200px;
   	display: inline-block;
   	padding:0 5px;
 }
 
 
 .detailBox{
-	width: 1200px;
-	min-width : 1200px;
+	
 	margin: 40px auto;
 }
 
 .detailBox table{
-	width: 100%
+	width: 100%;
 }
 
 .detailBox .detailTit{
@@ -1188,250 +1190,4 @@ select, input, button {family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋�
 	font-size:16px;
 }
 
-@media ( max-width: 800px ) {
-	.mBtn{display: none;}
-	.navi{display: none;}
-	.sideBar{display: none;}
-	.logoImg{
-		max-height: 40px;
-	}
-	/* 모바일 슬라이드 (모바일) */
-	.mainSlide{
-		width: 100%;
-	}
-	.mainSlideDiv{
-		margin: 0 auto;
-		overflow: hidden;
-		width: 100%;
-	}
-	.mainSlideUl{
-		width: 100%;
-	}
-	.mainSlideLi{
-		width: 100%;
-	}
-	.mainSlideLi:not(:first-child){
-		position: absolute;
-		opacity : 0;
-	}
-	.mainSlideImg{
-		width: 100%;
-	}
-	
-	/* 중간 라인 (모바일) */
-	.CheckLine{
-		display: block;
-		width: 100%;
-		height: 30px;
-		background-color: #4a414a;
-	}
-	
-	/* 로드맵 (모바일) */
-	.loadMapImgDiv{
-		width: 100%;
-		padding : 40px 0;
-	}
-	
-	.loadMapImg{
-		width: 100%;
-	}
-	
-	/* 메인 과정 (모바일) */
-	.processDiv{
-		width: 100%;
-		padding : 50px 0;
-		background-color: #f7f5f7;
-	}
-	.processUl{
-		margin: 0 auto;
-	}
-	.processLi{
-		display: inline-block;
-		width: 250px;
-		margin: 0 25px;
-	}
-	.processImg{
-		width: 100%;
-	}
-	
-	/* 상담신청 (모바일) */
-	.requestTestDiv{
-		width: 100%;
-		height: 800px;
-		line-height: 800px;
-		padding : 25px 0;
-	}
-	.requestTestDiv button{
-		width: 100%;
-	    height: 100px;
-	    font-size: 30px;
-	    font-weight: 600;
-	    border: 2px solid #d76bff;
-	    border-radius: 15px;
-	    background-color: black;
-	    color: white;
-	}
-	.requestTestTableDiv{
-		width: 100%;
-		min-width : 1200px;
-		padding : 25px 0;
-		position: absolute;
-		display: none;
-	}
-	.requestTestTableDiv button{
-		width: 200px;
-	    height: 50px;
-	    font-size: 20px;
-	    font-weight: 600;
-	    border: 2px solid #d76bff;
-	    border-radius: 15px;
-	    background-color: black;
-	    color: white;
-	}
-	
-	.requestTestTable{
-		width: 100%;
-		margin: 0 auto;
-	}
-	.requestTestTable td{
-		border: 1px solid black;
-	}
-	.requestTestTable img{
-		width: 200px;
-	}
-	.requestTestTable input[type="radio"]{
-		width: 100%;
-		font-size: 10px;
-	}
-	.requestTestFormTable{
-		width: 800px;
-	    margin: 0 auto;
-	    font-size: 20px;
-	    font-weight: 600;
-	    border-spacing: 0px;
-	    border-style: none;
-	    padding: 0px;
-	    border: 1px solid black;
-	}
-	.requestTestFormTable tr{
-		height: 50px;
-	}
-	.requestTestFormTable td{
-		
-		border: 1px solid black;
-	}
-	.requestTestFormTable input{
-	    height: 50px;
-	    font-size: 25px
-	}
-	
-	/* 지도 (모바일) */
-	.mapInfoDiv{
-		width: 100%;
-		padding : 50px 0;
-		background-image: url("../images/mapBG.jpg");
-	}
-	.mapInfoImg{
-		width: 100%;
-	}
-	.mapInfoTable{
-		background-color: #7c7c7c;
-		width: 100%;
-		margin: 0 auto;
-		color: white;
-		border-spacing: 0px;
-	    border-style: none;
-	    padding: 0px;
-	}
-	.mapInfoTable tr{
-		height: 40px;
-	}
-	.mapInfoTable tr td{
-		border: 2px solid white;
-	}
-	
-	/* 풋터 (모바일) */
-	.footerDiv{
-		width: 100%;
-		background-color: #171c2a;
-	}
-	.footMain{
-		width: 100%;
-		display: inline-flex;
-	}
-	.logosDiv{
-		padding: 10px;
-		width: 50%;
-	}
-	.textDivArea{
-		padding: 10px;
-	}
-	.textDivArea h1{
-		text-align: left;
-		color: #d7d7d7;
-	}
-	.textDivArea P{
-		text-align: left;
-		color: #d7d7d7;
-		font-size: 10px;
-	}
-	.footerB{
-		width: 100%;
-		display: inline-flex;
-	}
-	.footerB div{
-		padding: 10px;
-		margin: 0 auto;
-	}
-	.footerB div p{
-		text-align: center;
-		color: #d7d7d7;
-		font-size: 10px;
-	}
-	
-	
-	/* 상세 페이지 */
-	.locationArea{
-		width: 100%;
-		background-image: url(../images/BG/pageBG1.jpg);
-		padding: 20px 0;
-	}
-	
-	.locationArea h1{
-		color: white;
-		font-size: 20px;
-	}
-	
-	.locationArea p{
-		font-size: 10px;
-	    margin-top: 10px;
-	    font-weight: 600;
-	    color: white;
-	}
-	.detailImg{
-		width: 100%;
-	}
-	.fP{
-		border-left: 3px solid #b892f5;
-	}
-	.textArea{
-		margin : 30px auto;
-		width: 100%;
-	}
-	.textArea h2{
-		font-size: 20px;
-	    font-weight: 700;
-	    margin: 20px 0;
-	}
-	.textArea p{
-		font-size: 10px;
-	    line-height: 20px;
-	}
-	
-	
-	/*teammoca 추가*/
-	
-	.top-btn{display:none}
-	.processBoxDiv{left:0}
-}
 
