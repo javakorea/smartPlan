@@ -13,7 +13,6 @@
 	.processBoxDiv{left: 0; top:unset}
 	.processTit1{float:left; font-size: 5vh;}
 	.processTit2{font-size: 5vh; float: left; margin-left: 10px; line-height: unset;}
-	
 	.processTitleBox > div{display: inline-block; position: relative; top: 0px;margin-bottom:20px;}
 }
 
@@ -31,5 +30,21 @@
 	.sideBar{display:none}
 	.textDivArea{padding:0}
 	.textDivArea.location{margin-top:10px}
-
+	.naviUl{display:none}
+	
+	.pcHeader{display:none}
+	.mobileHeader{display:block !important;}
+	.mobileHeader > a{display:inline-block; height:70px;}
+	.mobileHeader .logoImg{top: 0; width: 90px; left: calc((100% - 90px)/2);}
+	.mobileMenuBtn, .mobileMenuBtnEsc{background: url(../images/ico/ico_mobileMenu.png)no-repeat; background-size: 100%; width: 35px; height: 35px; position: absolute; top: 20px; right: 18px; z-index:1; cursor:pointer;}
+	.mobileMenuBtnEsc{background: url(../images/ico/ico_mobileMenuEsc.png)no-repeat;  background-size: 100%; z-index:1001;}
+	.naviUlMoblie{position: fixed; left: 0; right: 0; bottom: 0; top: 70px; background:var(--blue); z-index: 1000;}
+	.naviUlMoblie .fNaviLiMoblie{font-size: 0.875rem; font-weight: 400; border-bottom:1px dashed #fff} 
+	.naviUlMoblie .mainAMoblie{color: #fff; overflow: hidden; display: block; position:relative; text-align: left; padding: 12px 20px; cursor:pointer;}
+	.naviUlMoblie .mainAMoblie:before{content:''; display:inline-block; position:absolute; right:13px; top:11px; background:url(../images/ico/ico_arrowRightW.png) no-repeat; background-size:100%; width:20px; height:20px; }
+	.naviUlMoblie .mainAMoblie + ul.on{display:block}
+	.naviUlMoblie .sNaviLiMoblie{padding: 12px 34px 12px; cursor: pointer; background: var(--navy_70); border-bottom: 1px solid var(--navy); box-shadow: inset 0px 1px 0px var(--blue);}
+	.naviUlMoblie .sNaviLiMoblie > a{color: #fff; }
+	.pageBody.overhide{overflow:hidden;}
+	.fNaviLiMoblie > ul{display:none}
 }

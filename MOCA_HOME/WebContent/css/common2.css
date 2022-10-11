@@ -332,7 +332,7 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 }
 .mBtn a{
 	padding: 2px 7px;
-	width: 60px;
+	width: 65px;
     display: inline-block;
     border: 1px solid var(--navy_30);
     border-radius: 20px;
@@ -989,7 +989,7 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 
 
 .detailBox{
-	
+	max-width:1200px;
 	margin: 40px auto;
 }
 
