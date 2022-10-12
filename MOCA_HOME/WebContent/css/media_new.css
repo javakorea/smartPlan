@@ -3,7 +3,7 @@
 	.loadMapImg {width: 100%;}
 	    
 }
-@media (max-width: 978px) {
+@media (max-width: 988px) {
 	.top-btn{display:none}
 	.sideBar{top:60%;}
 	.processTitleBox{width:100%; top:unset}
@@ -11,12 +11,29 @@
 	.prcessTitle{float: left;width: 32%;background-size: 100%;top: 130px;}
 	.processBg{display:none;/*top: -150px; width: 25%; background-size: 100%;height: 100%;*/}
 	.processBoxDiv{left: 0; top:unset}
-	.processTit1{float:left; font-size: 5vh;}
-	.processTit2{font-size: 5vh; float: left; margin-left: 10px; line-height: unset;}
+	.processTit1{float:left; font-size: 45px}
+	.processTit2{font-size: 45px; float: left; margin-left: 10px; line-height: unset;}
 	.processTitleBox > div{display: inline-block; position: relative; top: 0px;margin-bottom:20px;}
+	.detailBox.subject .subjectList > div{width: calc((100% - 18px) / 3); height: 30px; box-sizing: border-box; padding: 5px; text-overflow: ellipsis; overflow: hidden; white-space: pre;}
+	.detailBox.subject .subjectList > div.small{font-size: 10px; line-height: 18px;}
+	.detailBox.intro .bgHak{background-size:100%;height: 150px;}
+	.detailBox.intro table{border-spacing:0}
+	.detailBox.intro table tbody{display: flex; flex-direction: column;}
+	.detailBox.intro table tr{display: flex; flex-flow: row wrap; margin-top:10px;}
+	.detailBox.intro table tr:nth-child(2){border-top:1px solid #000} 
+	.detailBox.intro table th{display: flex; flex: 1}
+	
+	.detailBox.degreeCourse table.tbl2.pc{display:none}
+	.detailBox.degreeCourse table.tbl2.mobile{display:block !important;}
+	.detailBox.degreeCourse table.tbl2.mobile:last-child{ margin-top: 20px;}
+	.detailBox.degreeCourse table.tbl2.mobile th{width:10%}
+	
+	.detailBox.d2intro .bgDokhak{background-size:unset; width:100%}  
+	.detailBox.d2intro .grpP{width:100%}
+	.img_plan_d2{width:100%}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 718px) {
 	.processFullArea{padding:30px;height: 100%;}
 	.processBox{width: 100%; background-size: 100%; height: 50%;}
 	.processBox h4{margin-bottom:10px;}
@@ -26,8 +43,9 @@
 	.processBoxDiv{width:100%;}
 	.footMain{flex-direction: column;}
 	.logosDiv{padding:10px 0;}
+	.mainSlideImg, .loadMapImg{display:none}
+	.mainSlideImgMobile, .loadMapImgMobile{display:block !important; width:100%}
 	.textDivArea .time{border-right:0}
-	.sideBar{display:none}
 	.textDivArea{padding:0}
 	.textDivArea.location{margin-top:10px}
 	.naviUl{display:none}
@@ -35,16 +53,27 @@
 	.pcHeader{display:none}
 	.mobileHeader{display:block !important;}
 	.mobileHeader > a{display:inline-block; height:70px;}
-	.mobileHeader .logoImg{top: 0; width: 90px; left: calc((100% - 90px)/2);}
+	.mobileHeader .logoImg{top: 0; width: 90px; left: calc((100% - 90px)/2); padding: 8px 0px;}
+	
 	.mobileMenuBtn, .mobileMenuBtnEsc{background: url(../images/ico/ico_mobileMenu.png)no-repeat; background-size: 100%; width: 35px; height: 35px; position: absolute; top: 20px; right: 18px; z-index:1; cursor:pointer;}
 	.mobileMenuBtnEsc{background: url(../images/ico/ico_mobileMenuEsc.png)no-repeat;  background-size: 100%; z-index:1001;}
-	.naviUlMoblie{position: fixed; left: 0; right: 0; bottom: 0; top: 70px; background:var(--blue); z-index: 1000;}
+	.naviUlMoblie{position: fixed; left: 0; right: 0; bottom: 0; top: 70px; background:#7b91ae; z-index: 1000;}
 	.naviUlMoblie .fNaviLiMoblie{font-size: 0.875rem; font-weight: 400; border-bottom:1px dashed #fff} 
 	.naviUlMoblie .mainAMoblie{color: #fff; overflow: hidden; display: block; position:relative; text-align: left; padding: 12px 20px; cursor:pointer;}
 	.naviUlMoblie .mainAMoblie:before{content:''; display:inline-block; position:absolute; right:13px; top:11px; background:url(../images/ico/ico_arrowRightW.png) no-repeat; background-size:100%; width:20px; height:20px; }
 	.naviUlMoblie .mainAMoblie + ul.on{display:block}
-	.naviUlMoblie .sNaviLiMoblie{padding: 12px 34px 12px; cursor: pointer; background: var(--navy_70); border-bottom: 1px solid var(--navy); box-shadow: inset 0px 1px 0px var(--blue);}
-	.naviUlMoblie .sNaviLiMoblie > a{color: #fff; }
+	.naviUlMoblie .sNaviLiMoblie{cursor: pointer; background:#95a7bf; border-bottom: 1px solid #fff; }
+	.naviUlMoblie .sNaviLiMoblie:last-child{border-bottom:0}
+	.naviUlMoblie .sNaviLiMoblie > a{padding: 12px 34px 12px; color: #fff; text-align:left; display:block}
+	.mobileHeader .mBtn{position: fixed; bottom: 20px; left: 0; right: 0; z-index: 1001; height: auto;}
+	.mobileHeader .mBtn a{border-radius: 0; border: 1px solid #fff; color: #fff; padding: 10px 30px; box-sizing: border-box; width: 30%;}
 	.pageBody.overhide{overflow:hidden;}
 	.fNaviLiMoblie > ul{display:none}
+	
+	.detailBox{padding:20px;}
+	.detailBox.subject td{width:calc(100% / 3)}
+	.detailBox.passGuide table tr{display: flex; flex-flow: row wrap;}
+	.detailBox.passGuide table th{width:50%; border-bottom:1px solid #fff; line-height: 2.5;}
+	.detailBox.passGuide table td{flex: 2; border-bottom: 1px solid var(--blue);}
+	.detailBox.passGuide table th:last-of-type, .detailBox.passGuide table td:last-of-type{border-bottom:0}
 }

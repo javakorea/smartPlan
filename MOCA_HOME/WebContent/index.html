@@ -83,6 +83,13 @@
 			$('.pageBody').removeClass('pageLock');
 			$('.requestDiv').hide();
 		}else{
+			if($('.naviUlMoblie').is(':visible')){
+				$('.mobileMenuBtnEsc').hide();
+				$('.mobileMenuBtn').show();
+				$('.naviUlMoblie').hide();
+				$('.mobileHeader #headerBtn').hide();
+				$('.pageBody').removeClass('overhide');
+			}
 			$('.dim').show();
 			$('.pageBody').addClass('pageLock');
 			$('.requestDiv').show();
@@ -150,12 +157,17 @@
 			$('.mobileMenuBtnEsc').hide();
 			$('.mobileMenuBtn').show();
 			$('.naviUlMoblie').hide();
+			$('.mobileHeader #headerBtn').hide();
 			$('.pageBody').removeClass('overhide');
 		}else{
 			$('.mobileMenuBtnEsc').show();
 			$('.mobileMenuBtn').hide();
 			$('.naviUlMoblie').slideDown(300);
 			$('.naviUlMoblie').show();
+			setTimeout(function(){
+				$('.mobileHeader #headerBtn').show();
+			},300);
+			
 			$('.pageBody').addClass('overhide');
 		}
 		
@@ -166,7 +178,6 @@
 			_open2depMenu.slideUp(300);
 			_open2depMenu.removeClass('on');
 		}
-		debugger;
 		if($(_this).next().is(':visible')){
 			$(_this).next().slideUp(300);
 			$(_this).next().removeClass('on');
@@ -182,13 +193,13 @@
 		<div class="pcHeader">
 			<div class="header">
 				<div class="mBtn" id="headerBtn">
-					<a href="javascript:fn_openLogin();">로그인</a> <a
-						href="javascript:fn_openReg();" class="cBtn">회원가입</a> <a
-						href="javascript:fn_openCoun();">상담신청</a>
+					<a href="javascript:fn_openLogin();">로그인</a>
+					<a href="javascript:fn_openReg();" class="cBtn">회원가입</a>
+					<a href="javascript:fn_openCoun();" onclick="requestService();" >상담신청</a>
 				</div>
 				<div class="mBtn" id="afterBtn" style="display: none;">
-					<a href="https://abwlr75314.cafe24.com/php/index">마이페이지</a> <a
-						href="https://abwlr75314.cafe24.com/php/index">상담신청</a>
+					<a href="https://abwlr75314.cafe24.com/php/index">마이페이지</a>
+					<a href="https://abwlr75314.cafe24.com/php/index" onclick="requestService();" >상담신청</a>
 				</div>
 			</div>
 			<div class="top-btn" onclick="fn_scrollTop()">
@@ -196,7 +207,7 @@
 			</div>
 			<div class="navi">
 				<a href="./index.html" style="display: contents;">
-					<img class="logoImg" alt="" src="./images/logo-top_1.png">
+					<img class="logoImg" alt="" src="./images/logo.svg">
 				</a>
 				<ul class="naviUl">
 					<li class="fNaviLi">
@@ -242,7 +253,7 @@
 		</div>
 		<div class="mobileHeader" style="display:none">
 			<a href="./index.html">
-				<img class="logoImg" alt="" src="./images/logo-top_1.png">
+				<img class="logoImg" alt="" src="./images/logo.svg">
 			</a>
 			<button class="mobileMenuBtn" onclick="fn_btnMobileMenu()"></button>
 			<button class="mobileMenuBtnEsc" onclick="fn_btnMobileMenu()" style="display:none"></button>
@@ -255,8 +266,8 @@
 		    	</li>
 		    	<li class="fNaviLiMoblie"><a onclick="fn_mobileMenu1depClick(this)" class="mainAMoblie">국내교육</a>
 		    		<ul>
-		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage1">학점은행제</a></li>
-		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage2">독학학위제</a></li>
+		    			<li class="sNaviLiMoblie"><a href="./detailPage1.html">학점은행제</a></li>
+		    			<li class="sNaviLiMoblie"><a href="./detailPage2.html">독학학위제</a></li>
 		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage3">편입/대학원</a></li>
 		    		</ul>
 		    	</li>
@@ -282,6 +293,11 @@
 		    		</ul>
 		    	</li>
 		    </ul>
+		    <div class="mBtn" id="headerBtn" style="display:none">
+				<a href="javascript:fn_openLogin();">로그인</a> 
+				<a href="javascript:fn_openReg();" class="cBtn">회원가입</a>
+				<a href="javascript:fn_openCoun();" onclick="requestService();">상담신청</a>
+			</div>
 		</div>
 	</div>
 	
@@ -293,17 +309,17 @@
 	<div class="mainSlide">
 		<div class="mainSlideDiv">
 			<ul class="mainSlideUl">
-				<li class="mainSlideLi"><img class="mainSlideImg" src="./images/001.jpg"></li>
+				<li class="mainSlideLi"><img class="mainSlideImg" src="./images/001.jpg"><img class="mainSlideImgMobile" src="./images/001_2.png" style="display:none"></li>
 				<li class="mainSlideLi"><img class="mainSlideImg" src="./images/002.jpg"></li>
 				<li class="mainSlideLi"><img class="mainSlideImg" src="./images/003.jpg"></li>
 				<li class="mainSlideLi"><img class="mainSlideImg" src="./images/004.jpg"></li>
 			</ul>
 		</div>
 	</div>
-	<div class="CheckLine" style="margin-top: -5px;"></div>
  	<div class="loadMap">
 		<div class="loadMapImgDiv">
 			<img class="loadMapImg" src="./images/Process-001.png">
+			<img class="loadMapImgMobile" src="./images/Process-001_2.png" style="display:none">
 		</div>
 	</div>
 	<div class="processFullArea">
@@ -358,7 +374,7 @@
 	<div class="footerDiv">
 		<div class="footMain">
 			<div class="logosDiv">
-				<img alt="" src="./images/logo-top_1.png">
+				<img alt="" src="./images/logo_gray.svg">
 			</div>
 			<div class="textDivArea">
 				<h1>스마트플랜</h1>

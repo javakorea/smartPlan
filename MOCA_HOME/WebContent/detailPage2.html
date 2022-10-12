@@ -78,11 +78,19 @@
 			$('.pageBody').removeClass('pageLock');
 			$('.requestDiv').hide();
 		}else{
+			if($('.naviUlMoblie').is(':visible')){
+				$('.mobileMenuBtnEsc').hide();
+				$('.mobileMenuBtn').show();
+				$('.naviUlMoblie').hide();
+				$('.mobileHeader #headerBtn').hide();
+				$('.pageBody').removeClass('overhide');
+			}
 			$('.dim').show();
 			$('.pageBody').addClass('pageLock');
 			$('.requestDiv').show();
 		}
 	};
+	
 	
 	function fn_reqNext(){
 		if($('#req01').is(':visible')){
@@ -132,68 +140,161 @@
 		$('.dim').hide();
 		$('.requestDiv').hide();
 		$('.pageBody').removeClass('pageLock');
+	};
+	function openManu(){
+		$(".naviMoblie").css("display", "block");
+	}
+	function closeManu(){
+		$(".naviMoblie").css("display", "none");
+	}
+	
+	function fn_btnMobileMenu(){
+		if($('.naviUlMoblie').is(':visible')){
+			$('.mobileMenuBtnEsc').hide();
+			$('.mobileMenuBtn').show();
+			$('.naviUlMoblie').hide();
+			$('.mobileHeader #headerBtn').hide();
+			$('.pageBody').removeClass('overhide');
+		}else{
+			$('.mobileMenuBtnEsc').show();
+			$('.mobileMenuBtn').hide();
+			$('.naviUlMoblie').slideDown(300);
+			$('.naviUlMoblie').show();
+			setTimeout(function(){
+				$('.mobileHeader #headerBtn').show();
+			},300);
+			
+			$('.pageBody').addClass('overhide');
+		}
+		
+	}
+	function fn_mobileMenu1depClick(_this){
+		var _open2depMenu = $(_this).closest('.naviUlMoblie').find('.mainAMoblie+ul.on');
+		if(_open2depMenu.length > 0){
+			_open2depMenu.slideUp(300);
+			_open2depMenu.removeClass('on');
+		}
+		if($(_this).next().is(':visible')){
+			$(_this).next().slideUp(300);
+			$(_this).next().removeClass('on');
+		}else{
+			$(_this).next().slideDown(300);
+			$(_this).next().addClass('on');
+		}
 	}
 </script>
 </head>
 <body class="pageBody">
-	<div class="header">
-		<div class="mBtn" id="headerBtn">
-			<a href="javascript:fn_openLogin();">로그인</a> <a
-				href="javascript:fn_openReg();" class="cBtn">회원가입</a> <a
-				href="javascript:fn_openCoun();">상담신청</a>
+	<div class="headerArea">
+		<div class="pcHeader">
+			<div class="header">
+				<div class="mBtn" id="headerBtn">
+					<a href="javascript:fn_openLogin();">로그인</a>
+					<a href="javascript:fn_openReg();" class="cBtn">회원가입</a>
+					<a href="javascript:fn_openCoun();" onclick="requestService();" >상담신청</a>
+				</div>
+				<div class="mBtn" id="afterBtn" style="display: none;">
+					<a href="https://abwlr75314.cafe24.com/php/index">마이페이지</a>
+					<a href="https://abwlr75314.cafe24.com/php/index" onclick="requestService();" >상담신청</a>
+				</div>
+			</div>
+			<div class="top-btn" onclick="fn_scrollTop()">
+				<span class="top-btn__arrow"></span> <span class="top-btn__txt">맨 위로 이동</span>
+			</div>
+			<div class="navi">
+				<a href="./index.html" style="display: contents;">
+					<img class="logoImg" alt="" src="./images/logo.svg">
+				</a>
+				<ul class="naviUl">
+					<li class="fNaviLi">
+						<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드소개</a>
+						<ul style="display: none;">
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드소개</a></li>
+						</ul>
+					</li>
+					<li class="fNaviLi">
+						<a href="https://abwlr75314.cafe24.com/php/detailPage1.php" class="mainA">국내교육</a>
+						<ul style="display: none;">
+							<li class="sNaviLi"><a href="./detailPage1.html">학점은행제</a></li>
+							<li class="sNaviLi"><a href="./detailPage2.html">독학학위제</a></li>
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage3.php">편입/대학원</a></li>
+						</ul>
+					</li>
+					<li class="fNaviLi">
+						<a href="https://abwlr75314.cafe24.com/php/detailPage4.php" class="mainA">자격증</a>
+						<ul style="display: none;">
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage4.php">기사/산업기사</a></li>
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage5.php">사회복지사</a></li>
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage6.php">보육교사</a></li>
+						</ul>
+					</li>
+					<li class="fNaviLi">
+						<a href="https://abwlr75314.cafe24.com/php/detailPage7.php" class="mainA">해외교육</a>
+						<ul style="display: none;">
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage7.php">파운데이션</a></li>
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage8.php">ICL학위과정정</a></li>
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage9.php">ICNA고등학교과정</a></li>
+						</ul>
+					</li>
+					<li class="fNaviLi">
+						<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">고객센터</a>
+						<ul style="display: none;">
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">공지사항</a></li>
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounseling.php" onclick="requestService();" >상담신청</a></li>
+							<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounselingList.php">신청내역</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div class="mBtn" id="afterBtn" style="display: none;">
-			<a href="https://abwlr75314.cafe24.com/php/index">마이페이지</a> <a
-				href="https://abwlr75314.cafe24.com/php/index">상담신청</a>
+		<div class="mobileHeader" style="display:none">
+			<a href="./index.html">
+				<img class="logoImg" alt="" src="./images/logo.svg">
+			</a>
+			<button class="mobileMenuBtn" onclick="fn_btnMobileMenu()"></button>
+			<button class="mobileMenuBtnEsc" onclick="fn_btnMobileMenu()" style="display:none"></button>
+			<ul class="naviUlMoblie" style="display:none">
+		    	<li class="fNaviLiMoblie">
+		    		<a onclick="fn_mobileMenu1depClick(this)" class="mainAMoblie">브랜드 소개</a>
+		    		<ul>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/brand">브랜드 소개</a></li>
+		    		</ul>
+		    	</li>
+		    	<li class="fNaviLiMoblie"><a onclick="fn_mobileMenu1depClick(this)" class="mainAMoblie">국내교육</a>
+		    		<ul>
+		    			<li class="sNaviLiMoblie"><a href="./detailPage1.html">학점은행제</a></li>
+		    			<li class="sNaviLiMoblie"><a href="./detailPage2.html">독학학위제</a></li>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage3">편입/대학원</a></li>
+		    		</ul>
+		    	</li>
+		    	<li class="fNaviLiMoblie"><a onclick="fn_mobileMenu1depClick(this)" class="mainAMoblie">자격증</a>
+		    		<ul>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage4">국가기술자격증(기사/산업기사)</a></li>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage5">사회복지사</a></li>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage6">보육교사</a></li>
+		    		</ul>
+		    	</li>
+		    	<li class="fNaviLiMoblie"><a onclick="fn_mobileMenu1depClick(this)" class="mainAMoblie">해외교육</a>
+		    		<ul>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage7">파운데이션</a></li>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage8">ICL학위과정</a></li>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/detailPage9">ICNA고등학교과정</a></li>
+		    		</ul>
+		    	</li>
+		    	<li class="fNaviLiMoblie"><a onclick="fn_mobileMenu1depClick(this)" class="mainAMoblie">고객센터</a>
+		    		<ul>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/notice">공지사항</a></li>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/regCounseling">상담신청</a></li>
+		    			<li class="sNaviLiMoblie"><a href="http://psmart.kr/php/regCounselingList">신청내역</a></li>
+		    		</ul>
+		    	</li>
+		    </ul>
+		    <div class="mBtn" id="headerBtn" style="display:none">
+				<a href="javascript:fn_openLogin();">로그인</a> 
+				<a href="javascript:fn_openReg();" class="cBtn">회원가입</a>
+				<a href="javascript:fn_openCoun();" onclick="requestService();" >상담신청</a>
+			</div>
 		</div>
-	</div>
-	<div class="top-btn" onclick="fn_scrollTop()">
-		<span class="top-btn__arrow"></span> <span class="top-btn__txt">맨 위로 이동</span>
-	</div>
-	<div class="navi">
-		<a href="./index.html" style="display: contents;">
-			<img class="logoImg" alt="" src="./images/logo-top_1.png">
-		</a>
-		<ul class="naviUl">
-			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">브랜드소개</a>
-				<ul style="display: none;">
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">브랜드소개</a></li>
-				</ul>
-			</li>
-			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/detailPage1.php" class="mainA">국내교육</a>
-				<ul style="display: none;">
-					<li class="sNaviLi"><a href="./detailPage1.html">학점은행제</a></li>
-					<li class="sNaviLi"><a href="./detailPage2.html">독학학위제</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage3.php">편입/대학원</a></li>
-				</ul>
-			</li>
-			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/detailPage4.php" class="mainA">자격증</a>
-				<ul style="display: none;">
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage4.php">기사/산업기사</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage5.php">사회복지사</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage6.php">보육교사</a></li>
-				</ul>
-			</li>
-			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/detailPage7.php" class="mainA">해외교육</a>
-				<ul style="display: none;">
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage7.php">파운데이션</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage8.php">ICL학위과정정</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/detailPage9.php">ICNA고등학교과정</a></li>
-				</ul>
-			</li>
-			<li class="fNaviLi">
-				<a href="https://abwlr75314.cafe24.com/php/index" class="mainA">고객센터</a>
-				<ul style="display: none;">
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/index">공지사항</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounseling.php">상담신청</a></li>
-					<li class="sNaviLi"><a href="https://abwlr75314.cafe24.com/php/regCounselingList.php">신청내역</a></li>
-				</ul>
-			</li>
-		</ul>
 	</div>
 	<div class="sideBar" onclick="requestService();">
 		<span class="ico_write"></span>
@@ -291,26 +392,20 @@
 			<p class="explan">
 				총 11가지 전공이 있지만 몇 가지 전공은 응시할 수 있는 자격이 다르기 때문에 시험을 보시기 전에 상담을 통해서 확인하는 것이 좋습니다.
 			</p>
-			<table>
-				<tbody>
-					<tr>
-						<td>국어국문학</td>
-						<td>영어영문학</td>
-						<td>심리학</td>
-						<td>경영학</td>
-						<td>법학</td>
-						<td>행정학</td>
-					</tr>
-					<tr>
-						<td>유아교육학</td>
-						<td>가정학</td>
-						<td>컴퓨터공학</td>
-						<td>정보통신학</td>
-						<td>간호학</td>
-					</tr>
-				</tbody>
-			</table>
-			<p class="fcLightblue fbold">※ 컴퓨터과학 전공은 2022년 부터 컴퓨터공학으로 명칭 변경</p>
+			<div class="subjectList">
+				<div>국어국문학</div>
+				<div>영어영문학</div>
+				<div>심리학</div>
+				<div>경영학</div>
+				<div>법학</div>
+				<div>행정학</div>
+				<div>유아교육학</div>
+				<div>가정학</div>
+				<div>컴퓨터공학</div>
+				<div>정보통신학</div>
+				<div>간호학</div>
+			</div>
+			<p class="fcLightblue fbold mt10">※ 컴퓨터과학 전공은 2022년 부터 컴퓨터공학으로 명칭 변경</p>
 			<div class="fcWhite mt10 notice">
 				<p>유의사항</p>
 				<ul>
@@ -336,14 +431,14 @@
 				<td>학위 취득과정 <br/>(6과목 합격) 시험</td>
 			</tr>
 		</table>
-		<img class="mt10" src="../images/img_plan_d2.png">
+		<img class="img_plan_d2 mt10" src="./images/img_plan_d2.png">
 	</div>
 
 
 	<div class="footerDiv">
 		<div class="footMain">
-			<div class="logosDiv">
-				<img alt="" src="./images/logo-top_1.png">
+			<div class="logosDiv_gray">
+				<img alt="" src="./images/logo.svg">
 			</div>
 			<div class="textDivArea">
 				<h1>스마트플랜</h1>

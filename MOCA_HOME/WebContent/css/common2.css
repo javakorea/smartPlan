@@ -313,7 +313,7 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 }
 .header{
 	overflow:hidden;
-	padding: 10px 37px 0 6px;
+	padding:10px 8px 0 6px;
 	margin: 0 auto;
 }
 .l{
@@ -335,7 +335,6 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 	width: 65px;
     display: inline-block;
     border: 1px solid var(--navy_30);
-    border-radius: 20px;
     color: var(--navy_70);
 }
 .cBtn{
@@ -383,24 +382,24 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 	
 }
 .naviUl .fNaviLi:nth-child(1) > a{
-	box-shadow: inset 0 5px 0 var(--navy_20);
+	box-shadow: inset 0 1px 0 var(--navy_20);
 }
 .naviUl .fNaviLi:nth-child(2) > a{
-	box-shadow: inset 0 5px 0 var(--navy_30);
+	box-shadow: inset 0 1px 0 var(--navy_30);
 }
 .naviUl .fNaviLi:nth-child(3) > a{
-	box-shadow: inset 0 5px 0 var(--navy_40);
+	box-shadow: inset 0 1px 0 var(--navy_40);
 }
 .naviUl .fNaviLi:nth-child(4) > a{
-	box-shadow: inset 0 5px 0 var(--navy_30);
+	box-shadow: inset 0 1px 0 var(--navy_50);
 }
 .naviUl .fNaviLi:nth-child(5) > a{
-	box-shadow: inset 0 5px 0 var(--navy_20);
+	box-shadow: inset 0 1px 0 var(--navy_60);
 }
 .mainA.on{
 	color: var(--blue);
     font-weight: bold;
-    box-shadow: inset 0 5px 0 var(--navy_70) !important;
+    box-shadow: inset 0 1px 0 var(--navy_70) !important;
 }
 .fNaviLi ul{
 	width: 100%;
@@ -849,7 +848,7 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 	box-shadow: rgba(0,0,0,0.5) 2px 2px;
 	top:10%;
 	margin-left:calc((100% - 370px)/2);
-	padding-top:20px;
+	padding:20px;
 	z-index:999;
 }
 
@@ -906,7 +905,7 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 	background:url(../images/btn_radio.png) no-repeat;
 	background-position: -32px 0;
 	left:6px;
-	top:6px;
+	top:4px;
 }
 
 .requestList input[type=radio]:checked + label:before{
@@ -916,7 +915,6 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 
 .requestDiv .btnArea{
 	margin-top: 20px;
-    background: var(--navy_30);
     overflow: hidden;
     border-radius: 0 0 10px 10px;
     position:relative;
@@ -925,10 +923,10 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 .requestDiv .btnNext, .requestDiv .btnPrev{
 	font-size: 16px;
     font-weight: bold;
-    color: #fff;
     width: 50%;
     padding: 20px 0;
     cursor: pointer;
+   -webkit-tap-highlight-color : transparent !important;
     
 }
 
@@ -976,7 +974,6 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 
 .fullBox {
 	background: var(--blue);
-    padding: 30px;
 }
 
 .detailTit{
@@ -990,9 +987,16 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 
 .detailBox{
 	max-width:1200px;
-	margin: 40px auto;
+	margin: 0 auto;
+	padding:33px 40px;
+	box-sizing:border-box;
+	overflow: auto;
+	clear:both;
 }
 
+.detailBox + .detailBox{
+	padding-top:0;
+}
 .detailBox table{
 	width: 100%;
 }
@@ -1038,6 +1042,8 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 }
 .detailBox.intro table td{
 	text-align:left;
+	line-height: 1.7;
+    margin-top: 5px;
 }
 
 .detailBox.schedule table{
@@ -1061,6 +1067,7 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 }
 .detailBox.schedule table td:first-child{
 	text-align:center;
+	min-width: 35px;
 }
 .detailBox.subject{
 	margin: 0 auto;
@@ -1069,8 +1076,14 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 	border-spacing: 8px;
     border-collapse: separate;
 }
-.detailBox.subject td{
+.detailBox.subject .subjectList{
+	overflow:hidden;
+}
+.detailBox.subject .subjectList > div{
+	display:inline-block;
+	float:left;
 	padding: 12px;
+	margin:3px;
     border:1px solid #fff;
     border-radius:25px;
     color:#fff;
@@ -1099,6 +1112,9 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 .detailBox.subject .notice ul li{
 	line-height:1.5
 }
+.detailBox.passGuide table{
+	border:1px solid var(--blue);
+}
 .detailBox.passGuide table th{
 	padding:10px;
 	font-size:16px;
@@ -1110,13 +1126,11 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
 	padding:10px;
 	font-size:16px;
 	text-align:left;
-	border:1px solid var(--blue);
 }
 
-.detailBox.degreeCourse table{
-	border-spacing: 2px;
-    border-collapse: separate;
-}
+.detailBox.degreeCourse th, .detailBox.degreeCourse td{
+	border:2px solid #fff;
+	}
 .detailBox.degreeCourse .tbl1{
 	margin-bottom:20px;
 }
@@ -1178,6 +1192,7 @@ select, input, button {font-family:'NotoSansKR','맑은 고딕','Malgun Gothic',
     width: 30%;
     display:inline-block;
     height: 260px;
+    background-size:100%;
 }
 .detailBox.d2intro .grpP{
 	display:inline-block;
